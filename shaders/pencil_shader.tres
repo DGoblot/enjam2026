@@ -5,6 +5,6 @@
 [resource]
 shader = ExtResource("1_k58qj")
 shader_parameter/grain_scale = 0.50000002049012
-shader_parameter/grain_strength = 0.6000000285
+shader_parameter/grain_strength = 0.82800003933
 shader_parameter/roughness = 3.8270001817825
 shader_parameter/opacity = 0.70000003325
