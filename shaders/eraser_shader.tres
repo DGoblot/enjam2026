@@ -1,9 +1,9 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://b120m24pb6sxs"]
 
 [ext_resource type="Shader" uid="uid://dx0j552wqgm2j" path="res://shaders/eraser_shader.gdshader" id="1_s4su7"]
-[ext_resource type="Texture2D" uid="uid://blc2f4c08aalb" path="res://assets/E-ww7iSXsAQwnc1.png" id="2_umrps"]
+[ext_resource type="Texture2D" uid="uid://cqd2po7rcfh4v" path="res://assets/gilberte-tempete-chartres-16-9.jpg" id="2_umrps"]
 
 [resource]
 shader = ExtResource("1_s4su7")
 shader_parameter/line_texture = ExtResource("2_umrps")
-shader_parameter/line_texture_size = Vector2i(1154, 648)
+shader_parameter/line_texture_size = Vector2i(1366, 764)

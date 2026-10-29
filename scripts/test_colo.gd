@@ -1,42 +1,38 @@
 extends Control
 
-var screen_size : Vector2
+@onready var screen_button := %ButtonScreen
 
-var tween : Tween
-
-@onready var camera := %Camera
-@onready var ui := %UI
-@onready var button_zoom := %ButtonZoom
-@onready var button_dezoom := %ButtonDezoom
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	ui.hide()
-	screen_size = get_viewport_rect().size
-	button_zoom.pressed.connect(zoom.bind(button_zoom))
-	button_dezoom.pressed.connect(dezoom)
+	screen_button.pressed.connect(take_screenshoot)
 
-func _process(delta: float) -> void:
-	camera.scale = Vector2(1 / camera.zoom.x, 1 / camera.zoom.y)
+func take_screenshoot() -> void:
+	# Create the SubViewport 
+	var sub_viewport = SubViewport.new()
+	# Add the SubViewport to the tree
+	add_child(sub_viewport)
+	# Use the same World2D as the main Viewport
+	sub_viewport.world_2d = get_viewport().world_2d
+	# Set its size
+	sub_viewport.size = Vector2(1920, 1080)
+	# We only need it to update once for the screenshoot
+	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	# Move it to the place we want to take the screenshoot
+	sub_viewport.canvas_transform.origin = Vector2(-0, 0)
+	var date = Time.get_date_string_from_system().replace(".", "_")
+	var time = Time.get_time_string_from_system().replace(":", "")
+	var screenshot_path = "res://Images/screenshot_%s_%s.png" % [date, time]
+	# Wait for the next frame to render
+	await RenderingServer.frame_post_draw
+	# Grab the image, save it and free the SubViewport
+	var img = sub_viewport.get_texture().get_image()
+	img.save_png(screenshot_path)
+	_addImageToJSON(screenshot_path)
+	sub_viewport.queue_free()
+	
 
-func zoom(button: Button) -> void:
-	if tween:
-		if tween.is_running(): return
-		tween.kill()
-	tween = get_tree().create_tween()
-	
-	tween.tween_property(camera, "position", button.size / 2 + button.position, 0.5)
-	tween.set_parallel().tween_property(camera, "zoom", Vector2(screen_size.y / button.size.y, screen_size.y / button.size.y), 0.5)
-	await tween.finished
-	ui.show()
-	
-func dezoom() -> void:
-	if tween:
-		if tween.is_running(): return
-		tween.kill()
-	tween = get_tree().create_tween()
-	
-	tween.tween_property(camera, "position", screen_size / 2, 0.5)
-	tween.set_parallel().tween_property(camera, "zoom", Vector2(1, 1), 0.5)
-	await tween.finished
-	ui.hide()
+func _addImageToJSON(screenshot_path: String):
+	var json_file = FileAccess.open("res://scripts/listImagesAlbum.json", FileAccess.READ_WRITE)
+	var arrayListmagesPath = JSON.parse_string(json_file.get_as_text())
+	arrayListmagesPath.append(screenshot_path)
+	json_file.store_string(JSON.stringify(arrayListmagesPath, "\t"))
+	json_file.close()

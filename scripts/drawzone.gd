@@ -1,6 +1,6 @@
 extends Control
 
-var active := true
+var active := false
 
 @onready var _lines := %Lines
 @onready var area := %DrawZone
@@ -35,8 +35,6 @@ var _pressed := false
 var _current_line: Line2D
 var eraser := false
 
-@onready var screen_button := %Screen
-
 
 func _ready() -> void:
 	color_buttons = color_buttons_node.get_children()
@@ -58,9 +56,6 @@ func _ready() -> void:
 	small_button.button_pressed = true
 	pencil_button.button_pressed = true
 	black_button.button_pressed = true
-	
-	screen_button.pressed.connect(take_screenshoot)
-	
 
 func _input(event: InputEvent) -> void:
 	if not active:
@@ -80,13 +75,13 @@ func _input(event: InputEvent) -> void:
 			
 	
 	elif event is InputEventMouseMotion and _pressed:
-		if _is_mouse_in_area(event.global_position):
+		if _is_mouse_in_area(get_global_mouse_position()):
 			if not _current_line:
 				_new_line()
-			_current_line.add_point(_get_clamped_point(event.global_position))
+			_current_line.add_point(_get_clamped_point(get_global_mouse_position()))
 		else:
 			if _current_line:
-				_current_line.add_point(_get_clamped_point(event.global_position))
+				_current_line.add_point(_get_clamped_point(get_global_mouse_position()))
 				_current_line = null
 				
 
@@ -121,6 +116,7 @@ func _is_mouse_in_area(pos: Vector2) -> bool:
 	return area.get_global_rect().has_point(pos)
 
 func _get_clamped_point(pos: Vector2) -> Vector2:
+	pos
 	var rect: Rect2 = area.get_global_rect()
 	var clamped : Vector2
 	if width == 8:
@@ -187,37 +183,3 @@ func _on_forward_button_pressed() -> void:
 	if lines_array_index <= lines_array.size() - 2 and lines_array_index >= -1:
 		lines_array_index += 1
 		lines_array[lines_array_index].show()
-		
-	
-	
-func take_screenshoot() -> void:
-	# Create the SubViewport 
-	var sub_viewport = SubViewport.new()
-	# Add the SubViewport to the tree
-	add_child(sub_viewport)
-	# Use the same World2D as the main Viewport
-	sub_viewport.world_2d = get_viewport().world_2d
-	# Set its size
-	sub_viewport.size = Vector2(1920, 1080)
-	# We only need it to update once for the screenshoot
-	sub_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
-	# Move it to the place we want to take the screenshoot
-	sub_viewport.canvas_transform.origin = Vector2(-0, 0)
-	var date = Time.get_date_string_from_system().replace(".", "_")
-	var time = Time.get_time_string_from_system().replace(":", "")
-	var screenshot_path = "res://Images/screenshot_%s_%s.png" % [date, time]
-	# Wait for the next frame to render
-	await RenderingServer.frame_post_draw
-	# Grab the image, save it and free the SubViewport
-	var img = sub_viewport.get_texture().get_image()
-	img.save_png(screenshot_path)
-	_addImageToJSON(screenshot_path)
-	sub_viewport.queue_free()
-	
-
-func _addImageToJSON(screenshot_path: String):
-	var json_file = FileAccess.open("res://scripts/listImagesAlbum.json", FileAccess.READ_WRITE)
-	var arrayListmagesPath = JSON.parse_string(json_file.get_as_text())
-	arrayListmagesPath.append(screenshot_path)
-	json_file.store_string(JSON.stringify(arrayListmagesPath, "\t"))
-	json_file.close()

@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://c1sp5gg070ed5"]
+
+[ext_resource type="Script" uid="uid://bdenoqw3rwd5j" path="res://scripts/zoom_area.gd" id="1_m16hi"]
+[ext_resource type="Script" uid="uid://cd05lv782veq8" path="res://scripts/drawzone.gd" id="1_oy7pb"]
+
+[node name="ZoomArea" type="Control" unique_id=1688144259]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_m16hi")
+
+[node name="ButtonZoom" type="Button" parent="." unique_id=1678591676]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -482.0
+offset_top = -391.0
+offset_right = 482.0
+offset_bottom = 391.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DrawZone" type="Control" parent="ButtonZoom" unique_id=1423950848]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_oy7pb")
+
+[node name="Lines" type="Control" parent="ButtonZoom/DrawZone" unique_id=1176729967]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UI" type="Control" parent="." unique_id=1253384238]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ButtonDezoom" type="Button" parent="UI" unique_id=157676605]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1508.0
+offset_top = 8.0
+offset_right = 1860.0
+offset_bottom = 220.0
+theme_override_font_sizes/font_size = 149
+text = "Back"
+
+[node name="Buttons" type="Control" parent="UI" unique_id=414888765]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonBack" type="Button" parent="UI/Buttons" unique_id=1034253989]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 63.0
+offset_top = 139.0
+offset_right = 118.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 72
+disabled = true
+text = "Back
+"
+
+[node name="ButtonForward" type="Button" parent="UI/Buttons" unique_id=1933173913]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 30.0
+offset_top = 338.0
+offset_right = 328.0
+offset_bottom = 445.0
+theme_override_font_sizes/font_size = 72
+disabled = true
+text = "Forward
+"
+
+[node name="ButtonPencil" type="Button" parent="UI/Buttons" unique_id=1831067540]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 65.0
+offset_top = 596.0
+offset_right = 280.0
+offset_bottom = 703.0
+theme_override_font_sizes/font_size = 72
+toggle_mode = true
+text = "Pencil"
+
+[node name="ButtonStylo" type="Button" parent="UI/Buttons" unique_id=1880062393]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 67.0
+offset_top = 718.0
+offset_right = 282.0
+offset_bottom = 825.0
+theme_override_font_sizes/font_size = 72
+toggle_mode = true
+text = "Stylo
+"
+
+[node name="ButtonBig" type="Button" parent="UI/Buttons" unique_id=1782712515]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 163.0
+offset_top = 837.0
+offset_right = 278.0
+offset_bottom = 944.0
+theme_override_font_sizes/font_size = 72
+toggle_mode = true
+text = "Big"
+
+[node name="ButtonSmall" type="Button" parent="UI/Buttons" unique_id=122821614]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 301.0
+offset_top = 950.0
+offset_right = 499.0
+offset_bottom = 1057.0
+theme_override_font_sizes/font_size = 72
+toggle_mode = true
+text = "Small"
+
+[node name="ColorButtons" type="Control" parent="UI/Buttons" unique_id=1352792882]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonBlack" type="Button" parent="UI/Buttons/ColorButtons" unique_id=377115979]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1604.0
+offset_top = 366.0
+offset_right = 1798.0
+offset_bottom = 473.0
+theme_override_font_sizes/font_size = 72
+toggle_mode = true
+text = "Black"
+
+[node name="ButtonRed" type="Button" parent="UI/Buttons/ColorButtons" unique_id=245507524]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1666.0
+offset_top = 239.0
+offset_right = 1806.0
+offset_bottom = 346.0
+theme_override_font_sizes/font_size = 72
+toggle_mode = true
+text = "Red"
+
+[node name="ButtonBlue" type="Button" parent="UI/Buttons/ColorButtons" unique_id=381682990]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1689.0
+offset_top = 522.0
+offset_right = 1852.0
+offset_bottom = 629.0
+theme_override_font_sizes/font_size = 72
+toggle_mode = true
+text = "Blue"
+
+[node name="ButtonGreen" type="Button" parent="UI/Buttons/ColorButtons" unique_id=757212268]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1625.0
+offset_top = 665.0
+offset_right = 1845.0
+offset_bottom = 772.0
+theme_override_font_sizes/font_size = 72
+toggle_mode = true
+text = "Green"
+
+[node name="ButtonYellow" type="Button" parent="UI/Buttons/ColorButtons" unique_id=1526460977]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1559.0
+offset_top = 842.0
+offset_right = 1794.0
+offset_bottom = 949.0
+theme_override_font_sizes/font_size = 72
+toggle_mode = true
+text = "Yellow"
