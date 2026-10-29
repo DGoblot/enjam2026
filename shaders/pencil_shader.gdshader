@@ -1,4 +1,3 @@
-
 shader_type canvas_item;
 
 uniform float grain_scale : hint_range(0.1, 10.0) = 1.5;

@@ -1,9 +1,13 @@
 extends Control
 
+var active := true
+
 @onready var _lines := %Lines
 @onready var area := %DrawZone
+@onready var back_button := %ButtonBack
+@onready var forward_button := %ButtonForward
 @onready var pencil_button := %ButtonPencil
-@onready var eraser_button := %ButtonEraser
+@onready var stylo_button := %ButtonStylo
 @onready var big_button := %ButtonBig
 @onready var small_button := %ButtonSmall
 @onready var black_button := %ButtonBlack
@@ -14,13 +18,18 @@ extends Control
 
 @onready var color_buttons_node := %ColorButtons
 
-var color_buttons: Array[Node] 
+var color_buttons: Array[Node]
+var lines_array: Array[Line2D]
+var lines_array_index: int = -1
 
 @export var margin_small := 4
 @export var margin_large := 8
 
 var color: Color = Color.BLACK
 var width: int = 8
+var pencil_material := preload("res://shaders/pencil_shader.tres")
+var line_material := pencil_material
+
 
 var _pressed := false
 var _current_line: Line2D
@@ -29,8 +38,11 @@ var eraser := false
 func _ready() -> void:
 	color_buttons = color_buttons_node.get_children()
 	
+	back_button.pressed.connect(_on_back_button_pressed)
+	forward_button.pressed.connect(_on_forward_button_pressed)
+	
 	pencil_button.toggled.connect(_on_pencil_button_pressed)
-	eraser_button.toggled.connect(_on_eraser_button_pressed)
+	stylo_button.toggled.connect(_on_stylo_button_pressed)
 	big_button.toggled.connect(_on_big_button_pressed)
 	small_button.toggled.connect(_on_small_button_pressed)
 	
@@ -45,6 +57,9 @@ func _ready() -> void:
 	black_button.button_pressed = true
 
 func _input(event: InputEvent) -> void:
+	if not active:
+		return
+	
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			_pressed = event.pressed
@@ -71,7 +86,10 @@ func _input(event: InputEvent) -> void:
 
 func _new_line() -> void:
 	_current_line = Line2D.new()
-	_current_line.material = load("res://shaders/pencil_shader.tres")
+	if line_material:
+		_current_line.material = line_material
+	else:
+		_current_line.material = null
 	_current_line.end_cap_mode = Line2D.LINE_CAP_ROUND
 	_current_line.begin_cap_mode = Line2D.LINE_CAP_ROUND
 	_current_line.antialiased = true
@@ -79,6 +97,19 @@ func _new_line() -> void:
 	_lines.add_child(_current_line)
 	_current_line.default_color = color
 	_current_line.width = width
+	add_line_to_array(_current_line)
+	print(lines_array)
+	print(lines_array_index)
+	
+func add_line_to_array(line: Line2D) -> void:
+	for i in range(lines_array.size() - 1):
+		if lines_array[i].visible == false:
+			lines_array.pop_at(i)
+			if i == lines_array.size() - 1: break
+	if lines_array.size() >= 10:
+		lines_array.pop_front()
+	lines_array.append(line)
+	lines_array_index = lines_array.size() - 1
 
 func _is_mouse_in_area(pos: Vector2) -> bool:
 	return area.get_global_rect().has_point(pos)
@@ -100,15 +131,15 @@ func _get_clamped_point(pos: Vector2) -> Vector2:
 	return clamped - global_position
 
 func _on_pencil_button_pressed(_tmp: bool) -> void:
-	color = Color.BLACK
-	eraser_button.button_pressed = false
+	line_material = pencil_material
+	stylo_button.button_pressed = false
 	pencil_button.disabled = true
-	eraser_button.disabled = false
+	stylo_button.disabled = false
 	
-func _on_eraser_button_pressed(_tmp: bool) -> void:
-	color = Color.WHITE
+func _on_stylo_button_pressed(_tmp: bool) -> void:
+	line_material = null
 	pencil_button.button_pressed = false
-	eraser_button.disabled = true
+	stylo_button.disabled = true
 	pencil_button.disabled = false
 	
 func _on_big_button_pressed(_tmp: bool) -> void:
@@ -140,4 +171,15 @@ func _on_color_button_pressed(_tmp: bool, button: Button) -> void:
 		"ButtonYellow":
 			color = Color.YELLOW
 	
-	print(button.name)
+func _on_back_button_pressed() -> void:
+	if lines_array_index <= lines_array.size() - 1 and lines_array_index >= 0:
+		lines_array[lines_array_index].hide()
+		lines_array_index -= 1
+		
+	
+func _on_forward_button_pressed() -> void:
+	if lines_array_index <= lines_array.size() - 2 and lines_array_index >= -1:
+		lines_array_index += 1
+		lines_array[lines_array_index].show()
+		
+	
