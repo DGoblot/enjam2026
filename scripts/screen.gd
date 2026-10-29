@@ -1,6 +1,8 @@
 extends Control
 
 @onready var screen_button := %ButtonScreen
+@export var arrayAllImage: Array[Node]
+var index = 0
 
 func _ready() -> void:
 	screen_button.pressed.connect(take_screenshoot)
@@ -44,4 +46,9 @@ func _fadeOut():
 	await tween.finished
 	tween.kill()
 	screen_button.add_theme_stylebox_override("normal").a = 1
-	
+
+func _changeImage():
+	if (index + 1 <= arrayAllImage.size()):
+		arrayAllImage[index].visible = false
+		index += 1
+		arrayAllImage[index].visible = true
