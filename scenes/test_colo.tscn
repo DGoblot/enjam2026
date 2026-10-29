@@ -215,3 +215,12 @@ offset_bottom = 949.0
 theme_override_font_sizes/font_size = 72
 toggle_mode = true
 text = "Yellow"
+
+[node name="Screen" type="Button" parent="Buttons" unique_id=1199653726]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 766.0
+offset_top = 550.0
+offset_right = 861.0
+offset_bottom = 593.0
+text = "Screenshot"

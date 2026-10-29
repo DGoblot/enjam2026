@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dpgdy2b2q37mn"]
+
+[ext_resource type="Script" uid="uid://be11ooa7upqbr" path="res://scripts/menuScript.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control" unique_id=92239897]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Button" type="Control" parent="." unique_id=1686626233]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartButton" type="Button" parent="Button" unique_id=1281516674]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 556.0
+offset_top = 247.0
+offset_right = 628.0
+offset_bottom = 289.0
+text = "Play"
+
+[node name="AlbumButton" type="Button" parent="Button" unique_id=1595191546]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 556.0
+offset_top = 321.0
+offset_right = 633.0
+offset_bottom = 378.0
+disabled = true
+text = "Album"
