@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdenoqw3rwd5j" path="res://scripts/zoom_area.gd" id="1_m16hi"]
 [ext_resource type="Script" uid="uid://cd05lv782veq8" path="res://scripts/drawzone.gd" id="1_oy7pb"]
+[ext_resource type="Theme" uid="uid://cy3jqrigehjwu" path="res://shaders/clickable_area_theme.tres" id="1_ve84m"]
 
 [node name="ZoomArea" type="Control" unique_id=1688144259]
 layout_mode = 3
@@ -27,6 +28,7 @@ offset_right = 482.0
 offset_bottom = 391.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ve84m")
 
 [node name="DrawZone" type="Control" parent="ButtonZoom" unique_id=1423950848]
 unique_name_in_owner = true
@@ -74,30 +76,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ButtonBack" type="Button" parent="UI/Buttons" unique_id=1034253989]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 63.0
-offset_top = 139.0
-offset_right = 118.0
-offset_bottom = 170.0
-theme_override_font_sizes/font_size = 72
-disabled = true
-text = "Back
-"
-
-[node name="ButtonForward" type="Button" parent="UI/Buttons" unique_id=1933173913]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 30.0
-offset_top = 338.0
-offset_right = 328.0
-offset_bottom = 445.0
-theme_override_font_sizes/font_size = 72
-disabled = true
-text = "Forward
-"
-
 [node name="ButtonPencil" type="Button" parent="UI/Buttons" unique_id=1831067540]
 unique_name_in_owner = true
 layout_mode = 0
@@ -120,6 +98,16 @@ theme_override_font_sizes/font_size = 72
 toggle_mode = true
 text = "Stylo
 "
+
+[node name="ButtonEraser" type="Button" parent="UI/Buttons" unique_id=584980790]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 89.0
+offset_top = 473.0
+offset_right = 304.0
+offset_bottom = 580.0
+theme_override_font_sizes/font_size = 72
+text = "Eraser"
 
 [node name="ButtonBig" type="Button" parent="UI/Buttons" unique_id=1782712515]
 unique_name_in_owner = true

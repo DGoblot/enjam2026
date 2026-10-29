@@ -32,6 +32,7 @@ func zoom(button: Button) -> void:
 	tween.set_parallel().tween_property(camera, "zoom", Vector2(screen_size.y / get_global_rect().size.y, screen_size.y / get_global_rect().size.y), 0.5)
 	await tween.finished
 	ui.show()
+	draw_zone.camera_zoom = camera.zoom
 	draw_zone.active = true
 	
 func dezoom() -> void:

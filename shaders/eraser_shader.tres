@@ -6,4 +6,6 @@
 [resource]
 shader = ExtResource("1_s4su7")
 shader_parameter/line_texture = ExtResource("2_umrps")
-shader_parameter/line_texture_size = Vector2i(1366, 764)
+shader_parameter/line_texture_size = Vector2i(1104, 621)
+shader_parameter/camera_zoom = Vector2(3.125, 3.125)
+shader_parameter/camera_pos = Vector2(0, 0)

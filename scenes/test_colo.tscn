@@ -47,3 +47,11 @@ offset_top = 601.0
 offset_right = 423.0
 offset_bottom = 601.0
 scale = Vector2(0.185, 0.185)
+
+[node name="ZoomArea3" parent="." unique_id=1180941673 instance=ExtResource("3_p6wxt")]
+layout_mode = 1
+offset_left = 1460.0
+offset_top = 163.0
+offset_right = 1460.0
+offset_bottom = 163.0
+scale = Vector2(0.075, 0.075)

@@ -4,10 +4,9 @@ var active := false
 
 @onready var _lines := %Lines
 @onready var area := %DrawZone
-@onready var back_button := %ButtonBack
-@onready var forward_button := %ButtonForward
 @onready var pencil_button := %ButtonPencil
 @onready var stylo_button := %ButtonStylo
+@onready var eraser_button := %ButtonEraser
 @onready var big_button := %ButtonBig
 @onready var small_button := %ButtonSmall
 @onready var black_button := %ButtonBlack
@@ -28,22 +27,20 @@ var lines_array_index: int = -1
 var color: Color = Color.BLACK
 var width: int = 8
 var pencil_material := preload("res://shaders/pencil_shader.tres")
+var eraser_material := preload("res://shaders/eraser_shader.tres")
 var line_material := pencil_material
+var camera_zoom: Vector2
 
 
 var _pressed := false
 var _current_line: Line2D
-var eraser := false
-
 
 func _ready() -> void:
 	color_buttons = color_buttons_node.get_children()
 	
-	back_button.pressed.connect(_on_back_button_pressed)
-	forward_button.pressed.connect(_on_forward_button_pressed)
-	
 	pencil_button.toggled.connect(_on_pencil_button_pressed)
 	stylo_button.toggled.connect(_on_stylo_button_pressed)
+	eraser_button.toggled.connect(_on_eraser_button_pressed)
 	big_button.toggled.connect(_on_big_button_pressed)
 	small_button.toggled.connect(_on_small_button_pressed)
 	
@@ -116,7 +113,6 @@ func _is_mouse_in_area(pos: Vector2) -> bool:
 	return area.get_global_rect().has_point(pos)
 
 func _get_clamped_point(pos: Vector2) -> Vector2:
-	pos
 	var rect: Rect2 = area.get_global_rect()
 	var clamped : Vector2
 	if width == 8:
@@ -135,14 +131,27 @@ func _get_clamped_point(pos: Vector2) -> Vector2:
 func _on_pencil_button_pressed(_tmp: bool) -> void:
 	line_material = pencil_material
 	stylo_button.button_pressed = false
+	eraser_button.button_pressed = false
 	pencil_button.disabled = true
 	stylo_button.disabled = false
+	eraser_button.disabled = false
 	
 func _on_stylo_button_pressed(_tmp: bool) -> void:
 	line_material = null
 	pencil_button.button_pressed = false
+	eraser_button.button_pressed = false
 	stylo_button.disabled = true
 	pencil_button.disabled = false
+	eraser_button.disabled = false
+	
+func _on_eraser_button_pressed(_tmp: bool) -> void:
+	line_material = eraser_material
+	eraser_material.set_shader_parameter("camera_zoom", camera_zoom)
+	pencil_button.button_pressed = false
+	eraser_button.button_pressed = false
+	eraser_button.disabled = true
+	pencil_button.disabled = false
+	stylo_button.disabled = false
 	
 func _on_big_button_pressed(_tmp: bool) -> void:
 	width = 16
@@ -172,14 +181,3 @@ func _on_color_button_pressed(_tmp: bool, button: Button) -> void:
 			color = Color.GREEN
 		"ButtonYellow":
 			color = Color.YELLOW
-	
-func _on_back_button_pressed() -> void:
-	if lines_array_index <= lines_array.size() - 1 and lines_array_index >= 0:
-		lines_array[lines_array_index].hide()
-		lines_array_index -= 1
-		
-	
-func _on_forward_button_pressed() -> void:
-	if lines_array_index <= lines_array.size() - 2 and lines_array_index >= -1:
-		lines_array_index += 1
-		lines_array[lines_array_index].show()
