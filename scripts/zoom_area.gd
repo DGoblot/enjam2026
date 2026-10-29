@@ -36,16 +36,12 @@ func zoom(button: Button) -> void:
 	draw_zone.active = true
 	
 func dezoom() -> void:
-	print("ok")
-	draw_zone.active = false
 	if tween:
 		if tween.is_running(): return
 		tween.kill()
 	tween = get_tree().create_tween()
-	
-	print("what ?")
-	
+	draw_zone.active = false
+	ui.hide()
 	tween.tween_property(camera, "position", screen_size / 2, 0.5)
 	tween.set_parallel().tween_property(camera, "zoom", Vector2(1, 1), 0.5)
-	await tween.finished
-	ui.hide()
+	

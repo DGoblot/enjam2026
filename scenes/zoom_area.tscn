@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bdenoqw3rwd5j" path="res://scripts/zoom_area.gd" id="1_m16hi"]
 [ext_resource type="Script" uid="uid://cd05lv782veq8" path="res://scripts/drawzone.gd" id="1_oy7pb"]
 [ext_resource type="Theme" uid="uid://cy3jqrigehjwu" path="res://shaders/clickable_area_theme.tres" id="1_ve84m"]
+[ext_resource type="Texture2D" uid="uid://dnsv7ahfi4l7e" path="res://Images/crayon1.png" id="4_5vvbq"]
+[ext_resource type="Texture2D" uid="uid://bmcqfqkervqf4" path="res://Images/crayon.png" id="5_gjvg7"]
+[ext_resource type="Script" uid="uid://k6f0xbtpuhy2" path="res://scripts/button_mipmap.gd" id="6_6h3cl"]
 
 [node name="ZoomArea" type="Control" unique_id=1688144259]
 layout_mode = 3
@@ -61,6 +64,36 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=1890058855]
+layout_mode = 0
+offset_top = -68.0
+offset_right = 1900.0
+offset_bottom = 154.0
+color = Color(0.5294118, 0.16078432, 0.11372549, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="UI" unique_id=85034554]
+layout_mode = 0
+offset_left = -99.0
+offset_top = -68.0
+offset_right = 480.0
+offset_bottom = 1201.0
+color = Color(0.5294118, 0.16078432, 0.11372549, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="UI" unique_id=1795493892]
+layout_mode = 0
+offset_left = 1437.0
+offset_top = -68.0
+offset_right = 2090.0
+offset_bottom = 1201.0
+color = Color(0.5294118, 0.16078432, 0.11372549, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="UI" unique_id=1416586471]
+layout_mode = 0
+offset_top = 928.0
+offset_right = 1560.0
+offset_bottom = 1201.0
+color = Color(0.5294118, 0.16078432, 0.11372549, 1)
+
 [node name="ButtonDezoom" type="Button" parent="UI" unique_id=157676605]
 unique_name_in_owner = true
 layout_mode = 0
@@ -76,24 +109,28 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ButtonPencil" type="Button" parent="UI/Buttons" unique_id=1831067540]
+[node name="ButtonPencil" type="TextureButton" parent="UI/Buttons" unique_id=698854371]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 65.0
-offset_top = 596.0
-offset_right = 280.0
-offset_bottom = 703.0
-theme_override_font_sizes/font_size = 72
+offset_left = -175.0
+offset_top = 473.0
+offset_right = 806.0
+offset_bottom = 1226.0
 toggle_mode = true
-text = "Pencil"
+texture_normal = ExtResource("4_5vvbq")
+texture_pressed = ExtResource("5_gjvg7")
+texture_disabled = ExtResource("5_gjvg7")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("6_6h3cl")
 
 [node name="ButtonStylo" type="Button" parent="UI/Buttons" unique_id=1880062393]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 67.0
-offset_top = 718.0
-offset_right = 282.0
-offset_bottom = 825.0
+offset_left = 92.0
+offset_top = 705.0
+offset_right = 307.0
+offset_bottom = 812.0
 theme_override_font_sizes/font_size = 72
 toggle_mode = true
 text = "Stylo
@@ -102,10 +139,10 @@ text = "Stylo
 [node name="ButtonEraser" type="Button" parent="UI/Buttons" unique_id=584980790]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 89.0
-offset_top = 473.0
-offset_right = 304.0
-offset_bottom = 580.0
+offset_left = 84.0
+offset_top = 384.0
+offset_right = 313.0
+offset_bottom = 491.0
 theme_override_font_sizes/font_size = 72
 text = "Eraser"
 

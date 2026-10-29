@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dpgdy2b2q37mn"]
 
 [ext_resource type="Script" uid="uid://be11ooa7upqbr" path="res://scripts/menuScript.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://c68uc7hu1myhf" path="res://Images/fond_decran_-_Copie.png" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://bcxs1kgaritn3" path="res://scenes/livre.tscn" id="3_wu84c"]
 
 [node name="MainMenu" type="Control" unique_id=92239897]
 layout_mode = 3
@@ -10,6 +12,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1647885812]
+position = Vector2(967.00006, 431)
+scale = Vector2(0.5532258, 0.5532258)
+texture = ExtResource("2_ekxnf")
 
 [node name="Button" type="Control" parent="." unique_id=1686626233]
 anchors_preset = 0
@@ -34,3 +41,7 @@ offset_right = 633.0
 offset_bottom = 378.0
 disabled = true
 text = "Album"
+
+[node name="Livre" parent="Button" unique_id=2024997077 instance=ExtResource("3_wu84c")]
+position = Vector2(889, 524)
+scale = Vector2(0.10221773, 0.10221773)
