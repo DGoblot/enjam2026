@@ -40,7 +40,7 @@ func _ready() -> void:
 	
 	pencil_button.toggled.connect(_on_pencil_button_pressed)
 	stylo_button.toggled.connect(_on_stylo_button_pressed)
-	eraser_button.toggled.connect(_on_eraser_button_pressed)
+	eraser_button.pressed.connect(_on_eraser_button_pressed)
 	big_button.toggled.connect(_on_big_button_pressed)
 	small_button.toggled.connect(_on_small_button_pressed)
 	
@@ -95,20 +95,7 @@ func _new_line() -> void:
 	_lines.add_child(_current_line)
 	_current_line.default_color = color
 	_current_line.width = width
-	add_line_to_array(_current_line)
-	print(lines_array)
-	print(lines_array_index)
 	
-func add_line_to_array(line: Line2D) -> void:
-	for i in range(lines_array.size() - 1):
-		if lines_array[i].visible == false:
-			lines_array.pop_at(i)
-			if i == lines_array.size() - 1: break
-	if lines_array.size() >= 10:
-		lines_array.pop_front()
-	lines_array.append(line)
-	lines_array_index = lines_array.size() - 1
-
 func _is_mouse_in_area(pos: Vector2) -> bool:
 	return area.get_global_rect().has_point(pos)
 
@@ -131,27 +118,19 @@ func _get_clamped_point(pos: Vector2) -> Vector2:
 func _on_pencil_button_pressed(_tmp: bool) -> void:
 	line_material = pencil_material
 	stylo_button.button_pressed = false
-	eraser_button.button_pressed = false
 	pencil_button.disabled = true
 	stylo_button.disabled = false
-	eraser_button.disabled = false
 	
 func _on_stylo_button_pressed(_tmp: bool) -> void:
 	line_material = null
 	pencil_button.button_pressed = false
-	eraser_button.button_pressed = false
 	stylo_button.disabled = true
 	pencil_button.disabled = false
-	eraser_button.disabled = false
 	
-func _on_eraser_button_pressed(_tmp: bool) -> void:
-	line_material = eraser_material
-	eraser_material.set_shader_parameter("camera_zoom", camera_zoom)
-	pencil_button.button_pressed = false
-	eraser_button.button_pressed = false
-	eraser_button.disabled = true
-	pencil_button.disabled = false
-	stylo_button.disabled = false
+func _on_eraser_button_pressed() -> void:
+	print("vpod")
+	for line in _lines.get_children():
+		line.queue_free()
 	
 func _on_big_button_pressed(_tmp: bool) -> void:
 	width = 16
