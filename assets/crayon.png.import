@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c68uc7hu1myhf"
-path="res://.godot/imported/fond_decran_-_Copie.png-34efa4acf2ee6caefe7b75b38af544ec.ctex"
+uid="uid://bmcqfqkervqf4"
+path="res://.godot/imported/crayon.png-72b65bd0ba08e1a59fd6daed15cbee60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/fond_decran_-_Copie.png"
-dest_files=["res://.godot/imported/fond_decran_-_Copie.png-34efa4acf2ee6caefe7b75b38af544ec.ctex"]
+source_file="res://assets/crayon.png"
+dest_files=["res://.godot/imported/crayon.png-72b65bd0ba08e1a59fd6daed15cbee60.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2qsf1xnio6h6"
-path="res://.godot/imported/dissier_fermer.png-94f9643bb81ef4ac9b0307d0446dcb9d.ctex"
+uid="uid://c32415lno0a70"
+path="res://.godot/imported/screenshot_2026-10-29_183421.png-13a155a601d29260e98a7353f812ad51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/dissier_fermer.png"
-dest_files=["res://.godot/imported/dissier_fermer.png-94f9643bb81ef4ac9b0307d0446dcb9d.ctex"]
+source_file="res://Images/screenshot_2026-10-29_183421.png"
+dest_files=["res://.godot/imported/screenshot_2026-10-29_183421.png-13a155a601d29260e98a7353f812ad51.ctex"]
 
 [params]
 

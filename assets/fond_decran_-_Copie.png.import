@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgnx4qndu3xvs"
-path="res://.godot/imported/livre.png-d1388cf9a9c6edaaf079e6ccdc36ee02.ctex"
+uid="uid://c68uc7hu1myhf"
+path="res://.godot/imported/fond_decran_-_Copie.png-a590b3a915f971aa2f3c6a851a91ff63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/livre.png"
-dest_files=["res://.godot/imported/livre.png-d1388cf9a9c6edaaf079e6ccdc36ee02.ctex"]
+source_file="res://assets/fond_decran_-_Copie.png"
+dest_files=["res://.godot/imported/fond_decran_-_Copie.png-a590b3a915f971aa2f3c6a851a91ff63.ctex"]
 
 [params]
 

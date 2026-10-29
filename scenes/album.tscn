@@ -1,7 +1,18 @@
 [gd_scene format=3 uid="uid://cwr7egkwwfe42"]
 
 [ext_resource type="Script" uid="uid://d34y514tkphgn" path="res://scripts/album.gd" id="1_bgfgf"]
-[ext_resource type="Texture2D" uid="uid://l2xlpsemed8n" path="res://Images/R.jpg" id="2_r83bq"]
+[ext_resource type="Theme" uid="uid://d8xmnw53837n" path="res://shaders/text_theme.tres" id="2_epyip"]
+[ext_resource type="Texture2D" uid="uid://cpirgy61gfvpm" path="res://assets/onglet.png" id="2_r83bq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w81ou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8vqkf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mpdhx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lek5h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jggmm"]
 
 [node name="Album" type="Control" unique_id=989532239 node_paths=PackedStringArray("frameArray", "buttonPreviousPage", "buttonNextPage")]
 layout_mode = 3
@@ -14,6 +25,15 @@ script = ExtResource("1_bgfgf")
 frameArray = [NodePath("Page/LeftPicture"), NodePath("Page/RightPicture")]
 buttonPreviousPage = NodePath("PageAlbumButton/PreviousPage")
 buttonNextPage = NodePath("PageAlbumButton/NextPage")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1438418787]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.73333335, 0.6784314, 0.4862745, 1)
 
 [node name="Page" type="Control" parent="." unique_id=1560455487]
 anchors_preset = 0
@@ -39,28 +59,63 @@ scale = Vector2(0.5, 0.5)
 stretch_mode = 3
 
 [node name="PageAlbumButton" type="Control" parent="." unique_id=235587777]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="PreviousPage" type="TextureButton" parent="PageAlbumButton" unique_id=119363815]
-layout_mode = 0
-offset_left = 85.0
-offset_top = 842.0
-offset_right = 2085.0
-offset_bottom = 2175.0
-scale = Vector2(0.1, 0.1)
+[node name="PreviousPage" type="Button" parent="PageAlbumButton" unique_id=1442351798]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -225.0
+offset_right = 337.0
+grow_vertical = 0
+theme = ExtResource("2_epyip")
 disabled = true
-texture_normal = ExtResource("2_r83bq")
+text = "<--"
+flat = true
 
-[node name="NextPage" type="TextureButton" parent="PageAlbumButton" unique_id=1803586666]
-layout_mode = 0
-offset_left = 1646.0
-offset_top = 869.0
-offset_right = 3646.0
-offset_bottom = 2202.0
-scale = Vector2(0.1, 0.1)
-texture_normal = ExtResource("2_r83bq")
+[node name="NextPage" type="Button" parent="PageAlbumButton" unique_id=177883237]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -362.0
+offset_top = -245.125
+offset_right = -29.281128
+offset_bottom = -20.125
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.085, 1.085)
+theme = ExtResource("2_epyip")
+text = "-->"
+flat = true
+
+[node name="Onglet" type="Sprite2D" parent="." unique_id=1646631670]
+position = Vector2(1858.6089, 63.499996)
+scale = Vector2(1.1261442, 1.0714285)
+texture = ExtResource("2_r83bq")
+region_enabled = true
+region_rect = Rect2(2365.8123, 354.2207, 81.90234, 98.43634)
+
+[node name="ButtonClose" type="Button" parent="Onglet" unique_id=1266436410]
+unique_name_in_owner = true
+offset_left = -40.17108
+offset_top = -44.78072
+offset_right = 43.15973
+offset_bottom = 51.207943
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w81ou")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8vqkf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mpdhx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lek5h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jggmm")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="PageAlbumButton/PreviousPage" to="." method="_on_previous_page_pressed"]
 [connection signal="pressed" from="PageAlbumButton/NextPage" to="." method="_on_next_page_pressed"]

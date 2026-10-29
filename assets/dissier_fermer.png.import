@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmcqfqkervqf4"
-path="res://.godot/imported/crayon.png-c70105d5f8a5fc5848c50a8d8fe27a92.ctex"
+uid="uid://d2qsf1xnio6h6"
+path="res://.godot/imported/dissier_fermer.png-d3d47bf07849cf9424db8c75f8ce7a77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/crayon.png"
-dest_files=["res://.godot/imported/crayon.png-c70105d5f8a5fc5848c50a8d8fe27a92.ctex"]
+source_file="res://assets/dissier_fermer.png"
+dest_files=["res://.godot/imported/dissier_fermer.png-d3d47bf07849cf9424db8c75f8ce7a77.ctex"]
 
 [params]
 

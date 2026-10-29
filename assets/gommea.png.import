@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx4210j1n8f5l"
-path="res://.godot/imported/lapin.png-33505dc9c4852ab7a3e4a77fa8a9aa79.ctex"
+uid="uid://cqlh544w88je1"
+path="res://.godot/imported/gommea.png-075b42b0e928d8a6108102ef02959f82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/lapin.png"
-dest_files=["res://.godot/imported/lapin.png-33505dc9c4852ab7a3e4a77fa8a9aa79.ctex"]
+source_file="res://assets/gommea.png"
+dest_files=["res://.godot/imported/gommea.png-075b42b0e928d8a6108102ef02959f82.ctex"]
 
 [params]
 

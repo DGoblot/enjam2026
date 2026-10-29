@@ -3,11 +3,14 @@
 [ext_resource type="Script" uid="uid://bdenoqw3rwd5j" path="res://scripts/zoom_area.gd" id="1_m16hi"]
 [ext_resource type="Script" uid="uid://cd05lv782veq8" path="res://scripts/drawzone.gd" id="1_oy7pb"]
 [ext_resource type="Theme" uid="uid://cy3jqrigehjwu" path="res://shaders/clickable_area_theme.tres" id="1_ve84m"]
-[ext_resource type="Texture2D" uid="uid://dnsv7ahfi4l7e" path="res://Images/crayon1.png" id="4_5vvbq"]
-[ext_resource type="Texture2D" uid="uid://bmcqfqkervqf4" path="res://Images/crayon.png" id="5_gjvg7"]
+[ext_resource type="Texture2D" uid="uid://dnsv7ahfi4l7e" path="res://assets/crayon1.png" id="4_s4c8b"]
+[ext_resource type="Texture2D" uid="uid://bmcqfqkervqf4" path="res://assets/crayon.png" id="5_vv510"]
 [ext_resource type="Script" uid="uid://k6f0xbtpuhy2" path="res://scripts/button_mipmap.gd" id="6_6h3cl"]
-[ext_resource type="Texture2D" uid="uid://dk70b8sswk70g" path="res://Images/pinceau2.png" id="7_6h3cl"]
-[ext_resource type="Texture2D" uid="uid://dyhvladmwyrl3" path="res://Images/pinceau.png" id="8_lomkc"]
+[ext_resource type="Texture2D" uid="uid://dk70b8sswk70g" path="res://assets/pinceau2.png" id="7_bxpkf"]
+[ext_resource type="Texture2D" uid="uid://dyhvladmwyrl3" path="res://assets/pinceau.png" id="8_1gd4f"]
+[ext_resource type="Texture2D" uid="uid://cqlh544w88je1" path="res://assets/gommea.png" id="9_hrv4n"]
+[ext_resource type="Texture2D" uid="uid://c005le3i1kucq" path="res://assets/gomme.png" id="10_mt0aa"]
+[ext_resource type="Theme" uid="uid://d8xmnw53837n" path="res://shaders/text_theme.tres" id="11_vv510"]
 
 [node name="ZoomArea" type="Control" unique_id=1688144259]
 layout_mode = 3
@@ -18,6 +21,31 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_m16hi")
+
+[node name="DrawZone" type="Control" parent="." unique_id=1423950848]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 478.0
+offset_top = 149.0
+offset_right = -480.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_oy7pb")
+
+[node name="Lines" type="Control" parent="DrawZone" unique_id=1176729967]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="ButtonZoom" type="Button" parent="." unique_id=1678591676]
 unique_name_in_owner = true
@@ -34,27 +62,6 @@ offset_bottom = 391.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ve84m")
-
-[node name="DrawZone" type="Control" parent="ButtonZoom" unique_id=1423950848]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("1_oy7pb")
-
-[node name="Lines" type="Control" parent="ButtonZoom/DrawZone" unique_id=1176729967]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="UI" type="Control" parent="." unique_id=1253384238]
 unique_name_in_owner = true
@@ -114,42 +121,48 @@ offset_bottom = 40.0
 [node name="ButtonPencil" type="TextureButton" parent="UI/Buttons" unique_id=698854371]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -175.0
-offset_top = 473.0
-offset_right = 806.0
-offset_bottom = 1226.0
+offset_left = -333.0
+offset_top = 543.0
+offset_right = 1216.016
+offset_bottom = 1732.0
 toggle_mode = true
-texture_normal = ExtResource("4_5vvbq")
-texture_pressed = ExtResource("5_gjvg7")
-texture_disabled = ExtResource("5_gjvg7")
+texture_normal = ExtResource("4_s4c8b")
+texture_pressed = ExtResource("5_vv510")
+texture_disabled = ExtResource("5_vv510")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("6_6h3cl")
+metadata/_edit_lock_ = true
 
 [node name="ButtonStylo" type="TextureButton" parent="UI/Buttons" unique_id=1912795902]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -169.0
-offset_top = 640.0
-offset_right = 819.0
-offset_bottom = 1363.0
+offset_left = -357.0
+offset_top = 270.0
+offset_right = 1254.137
+offset_bottom = 1449.0
 toggle_mode = true
-texture_normal = ExtResource("7_6h3cl")
-texture_pressed = ExtResource("8_lomkc")
-texture_disabled = ExtResource("8_lomkc")
+texture_normal = ExtResource("7_bxpkf")
+texture_pressed = ExtResource("8_1gd4f")
+texture_disabled = ExtResource("8_1gd4f")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("6_6h3cl")
+metadata/_edit_lock_ = true
 
-[node name="ButtonEraser" type="Button" parent="UI/Buttons" unique_id=584980790]
+[node name="ButtonEraser" type="TextureButton" parent="UI/Buttons" unique_id=1837472251]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 84.0
-offset_top = 384.0
-offset_right = 313.0
-offset_bottom = 491.0
-theme_override_font_sizes/font_size = 72
-text = "Eraser"
+offset_left = -378.0
+offset_top = 7.0
+offset_right = 1269.9113
+offset_bottom = 1172.0
+texture_normal = ExtResource("9_hrv4n")
+texture_pressed = ExtResource("10_mt0aa")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("6_6h3cl")
+metadata/_edit_lock_ = true
 
 [node name="ButtonBig" type="Button" parent="UI/Buttons" unique_id=1782712515]
 unique_name_in_owner = true
@@ -233,3 +246,21 @@ offset_bottom = 949.0
 theme_override_font_sizes/font_size = 72
 toggle_mode = true
 text = "Yellow"
+
+[node name="Label" type="Label" parent="UI" unique_id=777959523]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -244.0
+offset_top = -117.0
+offset_right = 244.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("11_vv510")
+text = "Texte d'exemple"
+horizontal_alignment = 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk70b8sswk70g"
-path="res://.godot/imported/pinceau2.png-cc5b735c9d86dcc8d177097ea54c0197.ctex"
+uid="uid://c005le3i1kucq"
+path="res://.godot/imported/gomme.png-fbbfe58d87e1024fc73cdc01b5c0fce9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/pinceau2.png"
-dest_files=["res://.godot/imported/pinceau2.png-cc5b735c9d86dcc8d177097ea54c0197.ctex"]
+source_file="res://assets/gomme.png"
+dest_files=["res://.godot/imported/gomme.png-fbbfe58d87e1024fc73cdc01b5c0fce9.ctex"]
 
 [params]
 

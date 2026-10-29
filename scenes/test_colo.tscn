@@ -7,7 +7,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6wxt"]
 bg_color = Color(0.7565471, 0.44936168, 0.89151007, 1)
 
-[node name="Main" type="Control" unique_id=1596473220]
+[node name="Scene1" type="Control" unique_id=1596473220]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,6 +34,7 @@ offset_top = 372.0
 offset_right = 744.0
 offset_bottom = 372.0
 scale = Vector2(0.32, 0.32)
+text = "Ici c'est papy"
 
 [node name="ButtonScreen" type="Button" parent="." unique_id=1199653726]
 unique_name_in_owner = true
@@ -53,3 +54,4 @@ offset_top = 601.0
 offset_right = 423.0
 offset_bottom = 601.0
 scale = Vector2(0.185, 0.185)
+text = "La c'est mami (elle est très vieille)"

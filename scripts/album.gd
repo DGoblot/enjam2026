@@ -1,17 +1,24 @@
-extends Node
+extends Control
+
+@onready var button_close := %ButtonClose
 
 var _allImages: Array
 @export var frameArray: Array[TextureRect]
 var numberPages: int
 var actualPage = 0
-@export var buttonPreviousPage: TextureButton
-@export var buttonNextPage: TextureButton
+@export var buttonPreviousPage: Button
+@export var buttonNextPage: Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	button_close.pressed.connect(_on_button_close_pressed)
+	
 	_allImages = _load_json_file()
 	_putImageOnPage(0)
 	buttonPreviousPage.disabled = true
+
+func _on_button_close_pressed() -> void:
+	hide()
 
 func _load_json_file() -> Array:
 	if not FileAccess.file_exists("res://scripts/listImagesAlbum.json"):

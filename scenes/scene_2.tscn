@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bdvl6smu1nyaw"]
+
+[ext_resource type="Script" uid="uid://blufc75fnrecq" path="res://scripts/test_colo.gd" id="1_02v7m"]
+[ext_resource type="Texture2D" uid="uid://dsnho7sh07gst" path="res://assets/Terrasses-bar-OTPA-DG-4.jpg" id="2_02v7m"]
+[ext_resource type="PackedScene" uid="uid://c1sp5gg070ed5" path="res://scenes/zoom_area.tscn" id="3_ccscm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6wxt"]
+bg_color = Color(0.7565471, 0.44936168, 0.89151007, 1)
+
+[node name="Scene2" type="Control" unique_id=1596473220]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_02v7m")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=869985340]
+unique_name_in_owner = true
+position = Vector2(960, 540)
+
+[node name="PlaceholderBG" type="Sprite2D" parent="." unique_id=144621226]
+unique_name_in_owner = true
+position = Vector2(963.49994, 537.49994)
+scale = Vector2(1.6075, 1.1944445)
+texture = ExtResource("2_02v7m")
+
+[node name="ZoomArea" parent="." unique_id=1688144259 instance=ExtResource("3_ccscm")]
+layout_mode = 1
+offset_left = 1152.0
+offset_top = 488.0
+offset_right = 1152.0
+offset_bottom = 488.0
+scale = Vector2(0.32, 0.32)
+text = "Ici c'est papy"
+
+[node name="ButtonScreen" type="Button" parent="." unique_id=1199653726]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1769.0
+offset_top = 913.0
+offset_right = 1864.0
+offset_bottom = 956.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_p6wxt")
+text = "Screenshot"
+script = ExtResource("1_02v7m")
+
+[node name="ZoomArea2" parent="." unique_id=1700831280 instance=ExtResource("3_ccscm")]
+layout_mode = 1
+offset_left = 121.00003
+offset_top = 559.0
+offset_right = 121.0
+offset_bottom = 559.0
+scale = Vector2(0.185, 0.185)
+text = "La c'est mami (elle est très vieille)"

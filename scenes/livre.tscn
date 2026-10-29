@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bcxs1kgaritn3"]
 
-[ext_resource type="Texture2D" uid="uid://cgnx4qndu3xvs" path="res://Images/livre.png" id="1_ka2ey"]
-[ext_resource type="Texture2D" uid="uid://dx4210j1n8f5l" path="res://Images/lapin.png" id="2_8xe1y"]
-[ext_resource type="Texture2D" uid="uid://bynxmtwq575kh" path="res://Images/textre_1.png" id="3_0u3xp"]
-[ext_resource type="Texture2D" uid="uid://mfagm50sk3dv" path="res://Images/textre_2.png" id="4_mbqae"]
+[ext_resource type="Texture2D" uid="uid://cgnx4qndu3xvs" path="res://assets/livre.png" id="1_ka2ey"]
+[ext_resource type="Texture2D" uid="uid://dx4210j1n8f5l" path="res://assets/lapin.png" id="2_8xe1y"]
+[ext_resource type="Texture2D" uid="uid://bynxmtwq575kh" path="res://assets/textre_1.png" id="3_0u3xp"]
+[ext_resource type="Texture2D" uid="uid://mfagm50sk3dv" path="res://assets/textre_2.png" id="4_mbqae"]
 
 [node name="Livre" type="Sprite2D" unique_id=2024997077]
 texture = ExtResource("1_ka2ey")

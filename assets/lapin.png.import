@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vf3wfvkxie2m"
-path="res://.godot/imported/onglet0_-_Copie.png-682dd95229813982489948f47161e2dc.ctex"
+uid="uid://dx4210j1n8f5l"
+path="res://.godot/imported/lapin.png-fe1c2c5bb18c84f341cc098e6231d678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/onglet0_-_Copie.png"
-dest_files=["res://.godot/imported/onglet0_-_Copie.png-682dd95229813982489948f47161e2dc.ctex"]
+source_file="res://assets/lapin.png"
+dest_files=["res://.godot/imported/lapin.png-fe1c2c5bb18c84f341cc098e6231d678.ctex"]
 
 [params]
 
