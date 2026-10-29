@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://v84mhgga0a84"]
+
+[ext_resource type="Texture2D" uid="uid://cgnx4qndu3xvs" path="res://assets/livre.png" id="1_iwf0o"]
+[ext_resource type="Texture2D" uid="uid://dx4210j1n8f5l" path="res://assets/lapin.png" id="2_hihs0"]
+[ext_resource type="Script" uid="uid://b5txfodqhybk3" path="res://scripts/button_mipmap_and_bounce.gd" id="2_kraq4"]
+[ext_resource type="Texture2D" uid="uid://bynxmtwq575kh" path="res://assets/textre_1.png" id="3_kraq4"]
+[ext_resource type="Texture2D" uid="uid://mfagm50sk3dv" path="res://assets/textre_2.png" id="4_k5krk"]
+
+[node name="BookButton" type="Control" unique_id=1766773768]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="StartButton" type="TextureButton" parent="." unique_id=981908889]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 285.0
+offset_bottom = 403.0
+texture_normal = ExtResource("1_iwf0o")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("2_kraq4")
+
+[node name="TextureRect" type="TextureRect" parent="StartButton" unique_id=1355514354]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_hihs0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="StartButton" unique_id=1323282166]
+layout_mode = 0
+offset_right = 264.0
+offset_bottom = 374.0
+mouse_filter = 2
+texture = ExtResource("3_kraq4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="StartButton" unique_id=1410833177]
+layout_mode = 0
+offset_right = 266.0
+offset_bottom = 374.0
+mouse_filter = 2
+texture = ExtResource("4_k5krk")
+expand_mode = 1
+stretch_mode = 4

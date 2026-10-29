@@ -2,11 +2,15 @@
 
 [ext_resource type="Script" uid="uid://be11ooa7upqbr" path="res://scripts/menuScript.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://c68uc7hu1myhf" path="res://assets/fond_decran_-_Copie.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://cgnx4qndu3xvs" path="res://assets/livre.png" id="3_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://dx4210j1n8f5l" path="res://assets/lapin.png" id="4_1ajci"]
 [ext_resource type="Texture2D" uid="uid://7xr2r8goqpej" path="res://assets/dissier_-_Copie.png" id="4_8ln24"]
-[ext_resource type="Script" uid="uid://k6f0xbtpuhy2" path="res://scripts/button_mipmap.gd" id="4_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://bynxmtwq575kh" path="res://assets/textre_1.png" id="5_7b55j"]
 [ext_resource type="Theme" uid="uid://d8xmnw53837n" path="res://shaders/text_theme.tres" id="5_oa1go"]
 [ext_resource type="Texture2D" uid="uid://d2qsf1xnio6h6" path="res://assets/dissier_fermer.png" id="5_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://mfagm50sk3dv" path="res://assets/textre_2.png" id="6_5pajh"]
 [ext_resource type="Texture2D" uid="uid://be6vvnwnqs0lv" path="res://assets/167-1676577_nintendofan12s-fun-stuff-images-windows-xp-desktop-windows.png" id="6_rtw2f"]
+[ext_resource type="Script" uid="uid://b5txfodqhybk3" path="res://scripts/button_mipmap_and_bounce.gd" id="7_flqon"]
 [ext_resource type="PackedScene" uid="uid://51tbm6rn0jta" path="res://scenes/test_colo.tscn" id="8_tbmy8"]
 [ext_resource type="PackedScene" uid="uid://bdvl6smu1nyaw" path="res://scenes/scene_2.tscn" id="9_jk1qb"]
 [ext_resource type="PackedScene" uid="uid://cwr7egkwwfe42" path="res://scenes/album.tscn" id="10_5dd4i"]
@@ -30,29 +34,54 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="StartButton" type="TextureButton" parent="Button" unique_id=1630894497]
+[node name="StartButton" type="TextureButton" parent="Button" unique_id=631284493]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 141.0
-offset_top = -573.0
-offset_right = 1957.0
-offset_bottom = 1011.0
-texture_normal = ExtResource("5_rtw2f")
+offset_left = 486.0
+offset_top = 127.0
+offset_right = 781.0
+offset_bottom = 544.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_lgwnu")
 ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("4_rtw2f")
+stretch_mode = 4
+script = ExtResource("7_flqon")
 
-[node name="Label" type="Label" parent="Button/StartButton" unique_id=425200653]
+[node name="TextureRect" type="TextureRect" parent="Button/StartButton" unique_id=430811068]
+layout_mode = 0
+offset_right = 295.0
+offset_bottom = 417.0
+texture = ExtResource("4_1ajci")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Button/StartButton" unique_id=496372563]
+layout_mode = 0
+offset_right = 296.0
+offset_bottom = 418.0
+texture = ExtResource("5_7b55j")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="Button/StartButton" unique_id=845211784]
+layout_mode = 0
+offset_right = 295.0
+offset_bottom = 417.0
+texture = ExtResource("6_5pajh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label2" type="Label" parent="Button" unique_id=425200653]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -681.0
-offset_top = 283.0
-offset_right = -105.0
-offset_bottom = 439.5
+offset_left = 329.0
+offset_top = 543.0
+offset_right = 905.0
+offset_bottom = 699.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_oa1go")
@@ -62,27 +91,29 @@ horizontal_alignment = 1
 [node name="AlbumButton" type="TextureButton" parent="Button" unique_id=765255821]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 723.0
-offset_top = -616.0
-offset_right = 2614.0
-offset_bottom = 1034.0
+offset_left = 583.0
+offset_top = -745.0
+offset_right = 3097.0
+offset_bottom = 1674.0
+pivot_offset_ratio = Vector2(0.275, 0.455)
 disabled = true
 texture_normal = ExtResource("4_8ln24")
+texture_pressed = ExtResource("5_rtw2f")
 ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("4_rtw2f")
+stretch_mode = 4
+script = ExtResource("7_flqon")
 
-[node name="Label" type="Label" parent="Button/AlbumButton" unique_id=1417615568]
+[node name="Label" type="Label" parent="Button" unique_id=1417615568]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -682.5
-offset_top = 296.0
-offset_right = -138.5
-offset_bottom = 452.5
+offset_left = 990.0
+offset_top = 485.0
+offset_right = 1534.0
+offset_bottom = 641.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_oa1go")
@@ -90,8 +121,8 @@ text = "See albums"
 horizontal_alignment = 1
 
 [node name="ComputerOverlay" type="Sprite2D" parent="Button" unique_id=144995906]
-position = Vector2(1065.5, 253)
-scale = Vector2(1.5629575, 2.157552)
+position = Vector2(1581.5, 27.249985)
+scale = Vector2(2.3184478, 2.7454426)
 texture = ExtResource("6_rtw2f")
 
 [node name="Scenes" type="Control" parent="." unique_id=477532567]
@@ -102,6 +133,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="Scene1" parent="Scenes" unique_id=1596473220 instance=ExtResource("8_tbmy8")]
 unique_name_in_owner = true
