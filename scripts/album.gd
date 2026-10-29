@@ -11,7 +11,7 @@ var actualPage = 0
 func _ready() -> void:
 	_allImages = _load_json_file()
 	_putImageOnPage(0)
-	pass # Replace with function body.
+	buttonPreviousPage.disabled = true
 
 func _load_json_file() -> Array:
 	if not FileAccess.file_exists("res://scripts/listImagesAlbum.json"):
