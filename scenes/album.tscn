@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cwr7egkwwfe42"]
+
+[ext_resource type="Script" uid="uid://d34y514tkphgn" path="res://scripts/album.gd" id="1_bgfgf"]
+[ext_resource type="Texture2D" uid="uid://l2xlpsemed8n" path="res://Images/R.jpg" id="2_r83bq"]
+
+[node name="Album" type="Control" unique_id=989532239 node_paths=PackedStringArray("frameArray", "buttonPreviousPage", "buttonNextPage")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bgfgf")
+frameArray = [NodePath("Page/LeftPicture"), NodePath("Page/RightPicture")]
+buttonPreviousPage = NodePath("PageAlbumButton/PreviousPage")
+buttonNextPage = NodePath("PageAlbumButton/NextPage")
+
+[node name="Page" type="Control" parent="." unique_id=1560455487]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftPicture" type="TextureRect" parent="Page" unique_id=355415576]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 182.0
+offset_right = 1956.0
+offset_bottom = 1462.0
+scale = Vector2(0.5, 0.5)
+stretch_mode = 3
+
+[node name="RightPicture" type="TextureRect" parent="Page" unique_id=477401980]
+layout_mode = 0
+offset_left = 1044.0
+offset_top = 264.0
+offset_right = 2644.0
+offset_bottom = 1330.0
+scale = Vector2(0.5, 0.5)
+stretch_mode = 3
+
+[node name="PageAlbumButton" type="Control" parent="." unique_id=235587777]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PreviousPage" type="TextureButton" parent="PageAlbumButton" unique_id=119363815]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 842.0
+offset_right = 2085.0
+offset_bottom = 2175.0
+scale = Vector2(0.1, 0.1)
+disabled = true
+texture_normal = ExtResource("2_r83bq")
+
+[node name="NextPage" type="TextureButton" parent="PageAlbumButton" unique_id=1803586666]
+layout_mode = 0
+offset_left = 1646.0
+offset_top = 869.0
+offset_right = 3646.0
+offset_bottom = 2202.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_r83bq")
+
+[connection signal="pressed" from="PageAlbumButton/PreviousPage" to="." method="_on_previous_page_pressed"]
+[connection signal="pressed" from="PageAlbumButton/NextPage" to="." method="_on_next_page_pressed"]

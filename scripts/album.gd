@@ -1,0 +1,55 @@
+extends Node
+
+var _allImages: Array
+@export var frameArray: Array[TextureRect]
+var numberPages: int
+var actualPage = 0
+@export var buttonPreviousPage: TextureButton
+@export var buttonNextPage: TextureButton
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	_allImages = _load_json_file()
+	_putImageOnPage(0)
+	pass # Replace with function body.
+
+func _load_json_file() -> Array:
+	if not FileAccess.file_exists("res://scripts/listImagesAlbum.json"):
+		print("File not found")
+	var file = FileAccess.open("res://scripts/listImagesAlbum.json", FileAccess.READ)
+	var json_string = file.get_as_text()
+	file.close()
+	var listImages = JSON.parse_string(json_string)
+	numberPages = int(listImages.size() / 2)
+	return listImages
+
+func _putImageOnPage(actualPage: int) -> void:
+	var index := actualPage * 2
+	frameArray[0].texture = load(_allImages[index])
+	if (index + 1 < _allImages.size()):
+		frameArray[1].texture = load(_allImages[index + 1])
+	else:
+		frameArray[1].texture = null
+	
+func _changePage(newPage: int):
+	actualPage += newPage
+	if (actualPage == 0):
+		buttonPreviousPage.disabled = true
+	else:
+		buttonPreviousPage.disabled = false
+	if (actualPage == numberPages):
+		buttonNextPage.disabled = true
+	else:
+		buttonNextPage.disabled = false
+	_putImageOnPage(actualPage)
+	pass
+
+
+func _on_previous_page_pressed() -> void:
+	_changePage(-1)
+	pass # Replace with function body.
+
+
+func _on_next_page_pressed() -> void:
+	_changePage(1)
+	pass # Replace with function body.
