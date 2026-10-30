@@ -170,13 +170,13 @@ visible = false
 layout_mode = 1
 next = 1
 
-[node name="Scene2" parent="Scenes" unique_id=1155602499 instance=ExtResource("9_jk1qb")]
-unique_name_in_owner = true
+[node name="Scene3" parent="Scenes" unique_id=434586115 instance=ExtResource("15_j7ex8")]
 visible = false
 layout_mode = 1
 next = 2
 
-[node name="Scene3" parent="Scenes" unique_id=434586115 instance=ExtResource("15_j7ex8")]
+[node name="Scene2" parent="Scenes" unique_id=1155602499 instance=ExtResource("9_jk1qb")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 next = 3

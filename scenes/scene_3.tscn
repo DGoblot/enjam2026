@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://d3akve6b1xaij" path="res://assets/BG/IMG_2541.png" id="2_toq7q"]
 [ext_resource type="Texture2D" uid="uid://dxt3p63s3o4bs" path="res://assets/BG/IMG_2542.png" id="3_r2pi8"]
 [ext_resource type="Texture2D" uid="uid://cxdvqtk577c1m" path="res://assets/BG/IMG_2543.png" id="4_lmrsu"]
-[ext_resource type="Texture2D" uid="uid://bhfcpb8mr3nk2" path="res://assets/BG/IMG_2544.png" id="5_087sr"]
 [ext_resource type="PackedScene" uid="uid://c1sp5gg070ed5" path="res://scenes/zoom_area.tscn" id="6_gmcgl"]
 [ext_resource type="Theme" uid="uid://d8xmnw53837n" path="res://shaders/text_theme.tres" id="6_lmrsu"]
 [ext_resource type="AudioStream" uid="uid://15ap7llwijvd" path="res://assets/Music/Resto.MP3" id="7_r2pi8"]
@@ -20,16 +19,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_lmrsu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_087sr")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
 
-[node name="Scene3" type="Control" unique_id=1596473220]
+[node name="Scene3" type="Control" unique_id=1596473220 node_paths=PackedStringArray("arrayZoomArea")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,6 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_toq7q")
+arrayZoomArea = [NodePath("ZoomArea"), NodePath("ZoomArea2"), NodePath("ZoomArea3")]
 
 [node name="Camera" type="Camera2D" parent="." unique_id=869985340]
 unique_name_in_owner = true
@@ -49,7 +46,7 @@ position = Vector2(961.41626, 490.99997)
 scale = Vector2(1.0797747, 1.0814817)
 sprite_frames = SubResource("SpriteFrames_w81ou")
 autoplay = "default"
-frame_progress = 0.34387347
+frame_progress = 0.49989223
 
 [node name="ButtonScreen" type="Button" parent="." unique_id=407620353]
 unique_name_in_owner = true
