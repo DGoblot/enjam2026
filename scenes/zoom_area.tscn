@@ -10,7 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://dyhvladmwyrl3" path="res://assets/pinceau.png" id="8_1gd4f"]
 [ext_resource type="Texture2D" uid="uid://cqlh544w88je1" path="res://assets/gommea.png" id="9_hrv4n"]
 [ext_resource type="Texture2D" uid="uid://c005le3i1kucq" path="res://assets/gomme.png" id="10_mt0aa"]
+[ext_resource type="Texture2D" uid="uid://bby47ktfyo2be" path="res://assets/UI/gros_crayon.png" id="11_1gd4f"]
 [ext_resource type="Theme" uid="uid://d8xmnw53837n" path="res://shaders/text_theme.tres" id="11_vv510"]
+[ext_resource type="Texture2D" uid="uid://cvvxxk6tloxlk" path="res://assets/UI/gros_crayon_actif.png" id="12_hrv4n"]
+[ext_resource type="Texture2D" uid="uid://ca5gwmbmjjj5t" path="res://assets/UI/pztit_crayon.png" id="13_mt0aa"]
+[ext_resource type="Texture2D" uid="uid://c17bpan6w07nb" path="res://assets/UI/pztit_crayon_actif.png" id="14_rwnu2"]
 
 [node name="ZoomArea" type="Control" unique_id=1688144259]
 layout_mode = 3
@@ -121,10 +125,10 @@ offset_bottom = 40.0
 [node name="ButtonPencil" type="TextureButton" parent="UI/Buttons" unique_id=698854371]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -333.0
-offset_top = 543.0
-offset_right = 1216.016
-offset_bottom = 1732.0
+offset_left = -217.0
+offset_top = 298.0
+offset_right = 1332.016
+offset_bottom = 1487.0
 toggle_mode = true
 texture_normal = ExtResource("4_s4c8b")
 texture_pressed = ExtResource("5_vv510")
@@ -137,10 +141,10 @@ metadata/_edit_lock_ = true
 [node name="ButtonStylo" type="TextureButton" parent="UI/Buttons" unique_id=1912795902]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -357.0
-offset_top = 270.0
-offset_right = 1254.137
-offset_bottom = 1449.0
+offset_left = -482.0
+offset_top = 310.0
+offset_right = 1129.137
+offset_bottom = 1489.0
 toggle_mode = true
 texture_normal = ExtResource("7_bxpkf")
 texture_pressed = ExtResource("8_1gd4f")
@@ -164,27 +168,37 @@ stretch_mode = 0
 script = ExtResource("6_6h3cl")
 metadata/_edit_lock_ = true
 
-[node name="ButtonBig" type="Button" parent="UI/Buttons" unique_id=1782712515]
+[node name="ButtonBig" type="TextureButton" parent="UI/Buttons" unique_id=770375360]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 163.0
-offset_top = 837.0
-offset_right = 278.0
-offset_bottom = 944.0
-theme_override_font_sizes/font_size = 72
+offset_left = -497.0
+offset_top = -245.0
+offset_right = 1366.0
+offset_bottom = 1264.0
 toggle_mode = true
-text = "Big"
+texture_normal = ExtResource("11_1gd4f")
+texture_pressed = ExtResource("12_hrv4n")
+texture_disabled = ExtResource("12_hrv4n")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("6_6h3cl")
+metadata/_edit_lock_ = true
 
-[node name="ButtonSmall" type="Button" parent="UI/Buttons" unique_id=122821614]
+[node name="ButtonSmall" type="TextureButton" parent="UI/Buttons" unique_id=735734959]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 301.0
-offset_top = 950.0
-offset_right = 499.0
-offset_bottom = 1057.0
-theme_override_font_sizes/font_size = 72
+offset_left = -341.0
+offset_top = -373.0
+offset_right = 1757.0
+offset_bottom = 1232.0
 toggle_mode = true
-text = "Small"
+texture_normal = ExtResource("13_mt0aa")
+texture_pressed = ExtResource("14_rwnu2")
+texture_disabled = ExtResource("14_rwnu2")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("6_6h3cl")
+metadata/_edit_lock_ = true
 
 [node name="ColorButtons" type="Control" parent="UI/Buttons" unique_id=1352792882]
 unique_name_in_owner = true
@@ -255,10 +269,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -244.0
-offset_top = -117.0
-offset_right = 244.0
-offset_bottom = -40.0
+offset_left = -387.5
+offset_top = -145.0
+offset_right = 387.5
+offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("11_vv510")
