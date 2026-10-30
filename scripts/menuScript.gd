@@ -2,6 +2,8 @@ extends Control
 
 var tween: Tween
 
+@onready var sound := %AudioStreamPlayer2D
+
 var played := false
 
 @onready var playButton := %StartButton
@@ -70,3 +72,8 @@ func _checkIfAlbumIsAvailable():
 	if (json_string != "" ):
 		albumButton.disabled = false
 		albumButton.texture_normal = load("res://assets/dissier_fermer.png")
+
+
+func change_music(music : AudioStreamMP3):
+	sound.stream = music
+	sound.playing = true

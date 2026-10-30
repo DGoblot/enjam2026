@@ -2,6 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://vp7g80yq63ka" path="res://windowsxplike-a.otf" id="1_2tnep"]
 [ext_resource type="FontFile" uid="uid://ccqf2d5xvwqpa" path="res://windows-xp-title-window.otf" id="1_qj6d2"]
+[ext_resource type="StyleBox" uid="uid://c8s1sl2srdr62" path="res://grabber.tres" id="3_yjrcx"]
+[ext_resource type="StyleBox" uid="uid://crsphcksqethk" path="res://grabber_bg.tres" id="4_xos8e"]
 
 [resource]
 Button/constants/outline_size = 20
@@ -11,4 +13,12 @@ Label/constants/outline_size = 20
 Label/font_sizes/font_size = 60
 Label/fonts/font = ExtResource("1_qj6d2")
 LineEdit/fonts/font = ExtResource("1_2tnep")
+RichTextLabel/constants/outline_size = 20
+RichTextLabel/font_sizes/normal_font_size = 60
+RichTextLabel/fonts/normal_font = ExtResource("1_qj6d2")
 TextEdit/fonts/font = ExtResource("1_2tnep")
+VScrollBar/styles/grabber = ExtResource("3_yjrcx")
+VScrollBar/styles/grabber_highlight = ExtResource("3_yjrcx")
+VScrollBar/styles/grabber_pressed = ExtResource("3_yjrcx")
+VScrollBar/styles/scroll = ExtResource("4_xos8e")
+VScrollBar/styles/scroll_focus = ExtResource("4_xos8e")

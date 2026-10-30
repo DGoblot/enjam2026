@@ -1,9 +1,16 @@
 extends Control
 
+@onready var main : = $/root/MainMenu
+
 @onready var screen_button := %ButtonScreen
+@export var music : AudioStreamMP3
 
 func _ready() -> void:
 	screen_button.pressed.connect(take_screenshoot)
+	visibility_changed.connect(on_visibility_changed)
+	
+func on_visibility_changed() -> void:
+	main.change_music(music)
 
 func take_screenshoot() -> void:
 	# Create the SubViewport 
@@ -36,3 +43,4 @@ func _addImageToJSON(screenshot_path: String):
 	arrayListmagesPath.append(screenshot_path)
 	json_file.store_string(JSON.stringify(arrayListmagesPath, "\t"))
 	json_file.close()
+	

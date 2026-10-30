@@ -72,13 +72,14 @@ func _input(event: InputEvent) -> void:
 			
 	
 	elif event is InputEventMouseMotion and _pressed:
-		if _is_mouse_in_area(get_global_mouse_position()):
+		var mouse_world_position = get_canvas_transform().affine_inverse() * event.position
+		if _is_mouse_in_area(mouse_world_position):
 			if not _current_line:
 				_new_line()
-			_current_line.add_point(_get_clamped_point(get_global_mouse_position()))
+			_current_line.add_point(_get_clamped_point(mouse_world_position))
 		else:
 			if _current_line:
-				_current_line.add_point(_get_clamped_point(get_global_mouse_position()))
+				_current_line.add_point(_get_clamped_point(mouse_world_position))
 				_current_line = null
 				
 
@@ -128,7 +129,6 @@ func _on_stylo_button_pressed(_tmp: bool) -> void:
 	pencil_button.disabled = false
 	
 func _on_eraser_button_pressed() -> void:
-	print("vpod")
 	for line in _lines.get_children():
 		line.queue_free()
 	

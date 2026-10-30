@@ -12,7 +12,7 @@ var actualPage = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	button_close.pressed.connect(_on_button_close_pressed)
-	
+	return
 	_allImages = _load_json_file()
 	_putImageOnPage(0)
 	buttonPreviousPage.disabled = true

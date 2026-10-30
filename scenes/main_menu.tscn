@@ -172,3 +172,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1ajci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rcqid")
 text = "Alors en fait c'est l'histoire de quelqu'un qui fait quelque chose"
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1686973671]
+unique_name_in_owner = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1979285525]
+position = Vector2(960, 540)

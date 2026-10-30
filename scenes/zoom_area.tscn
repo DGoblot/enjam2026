@@ -123,6 +123,28 @@ offset_right = 1560.0
 offset_bottom = 1201.0
 color = Color(0.5294118, 0.16078432, 0.11372549, 1)
 
+[node name="Label" type="RichTextLabel" parent="UI" unique_id=1522720906]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -913.0
+offset_top = -145.0
+offset_right = 913.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("11_vv510")
+text = "Texte d'exemple
+sqd
+qsd
+qsd
+qsd"
+horizontal_alignment = 1
+
 [node name="ButtonDezoom" type="TextureButton" parent="UI" unique_id=163976079]
 unique_name_in_owner = true
 layout_mode = 0
@@ -304,21 +326,3 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("6_6h3cl")
 metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="UI" unique_id=777959523]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -387.5
-offset_top = -145.0
-offset_right = 387.5
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("11_vv510")
-text = "Texte d'exemple"
-horizontal_alignment = 1

@@ -1,8 +1,28 @@
 [gd_scene format=3 uid="uid://51tbm6rn0jta"]
 
-[ext_resource type="Script" uid="uid://blufc75fnrecq" path="res://scripts/screen.gd" id="1_8mrud"]
-[ext_resource type="Texture2D" uid="uid://cqd2po7rcfh4v" path="res://assets/gilberte-tempete-chartres-16-9.jpg" id="1_nqb2o"]
+[ext_resource type="Script" uid="uid://blufc75fnrecq" path="res://scripts/test_colo.gd" id="1_8mrud"]
+[ext_resource type="AudioStream" uid="uid://cxkhjknp6yptr" path="res://assets/Music/Festival.MP3" id="2_8mrud"]
+[ext_resource type="Texture2D" uid="uid://864p2vlif4iu" path="res://assets/BG/IMG_2509.png" id="3_nt2or"]
 [ext_resource type="PackedScene" uid="uid://c1sp5gg070ed5" path="res://scenes/zoom_area.tscn" id="3_p6wxt"]
+[ext_resource type="Texture2D" uid="uid://cxubd2t1nnqbd" path="res://assets/BG/IMG_2510.png" id="4_t6cx7"]
+[ext_resource type="Texture2D" uid="uid://b7uejxohisrmw" path="res://assets/BG/IMG_2511.png" id="5_brhr0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w81ou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nt2or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t6cx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_brhr0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.5
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6wxt"]
 bg_color = Color(0.7565471, 0.44936168, 0.89151007, 1)
@@ -16,25 +36,29 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_8mrud")
+music = ExtResource("2_8mrud")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=869985340]
 unique_name_in_owner = true
 position = Vector2(960, 540)
 
-[node name="PlaceholderBG" type="Sprite2D" parent="." unique_id=144621226]
+[node name="PlaceholderBG" type="AnimatedSprite2D" parent="." unique_id=713735965]
 unique_name_in_owner = true
-position = Vector2(960.4999, 540.56195)
-scale = Vector2(0.9994791, 0.99710727)
-texture = ExtResource("1_nqb2o")
+position = Vector2(961.41626, 490.99997)
+scale = Vector2(0.54480267, 0.50725806)
+sprite_frames = SubResource("SpriteFrames_w81ou")
+autoplay = "default"
+frame_progress = 0.12656082
 
 [node name="ZoomArea" parent="." unique_id=1688144259 instance=ExtResource("3_p6wxt")]
 layout_mode = 1
-offset_left = 744.0
-offset_top = 372.0
-offset_right = 744.0
-offset_bottom = 372.0
-scale = Vector2(0.32, 0.32)
-text = "Ici c'est papy"
+offset_left = 947.0
+offset_top = 607.0
+offset_right = 947.0
+offset_bottom = 607.0
+scale = Vector2(0.525, 0.525)
+text = "Ce jour-là, c’était la première fois que je séchais les cours du soir. Mon ami Cheng nous a proposé de venir finir une œuvre qu’il avait commencée sur le mur d’un bâtiment abandonné. Cheng était impulsif et se mettait parfois dans des situations dangereuses ; on l'embrouillait souvent à cause de ça, mais c’était aussi une réelle bouffée d’air frais. Il nous a beaucoup poussés à remettre en question l’autorité de nos professeurs et de nos parents, et à chercher à découvrir réellement qui nous étions. Je pense que si je suis devenu artiste plus tard, c’est en partie grâce à lui. "
+metadata/_edit_lock_ = true
 
 [node name="ButtonScreen" type="Button" parent="." unique_id=1199653726]
 unique_name_in_owner = true
@@ -49,9 +73,10 @@ script = ExtResource("1_8mrud")
 
 [node name="ZoomArea2" parent="." unique_id=1700831280 instance=ExtResource("3_p6wxt")]
 layout_mode = 1
-offset_left = 423.0
-offset_top = 601.0
-offset_right = 423.0
-offset_bottom = 601.0
-scale = Vector2(0.185, 0.185)
-text = "La c'est mami (elle est très vieille)"
+offset_left = 75.0
+offset_top = 21.0
+offset_right = 75.0
+offset_bottom = 21.0
+scale = Vector2(0.475, 0.475)
+text = "La première fois que j’ai vu Wei, je ne l’ai même pas calculée. Elle traînait énormément avec Xin et je me suis donc mis à la découvrir au fur et à mesure qu’on traînait ensemble. Elle est courageuse, persévérante et furieusement rebelle. Elle avait aussi des défauts, bien sûr : elle était grincheuse et pouvait être une vraie tête de mule. Mais c’est aussi ce qui faisait son charme. De plus, nous partagions une passion commune : le dessin. On s’était promis de postuler ensemble aux Beaux-Arts de Paris à nos 18 ans. Je lui avais tricoté et offert ce pull, qui illustre ce qu’elle représentait pour moi."
+metadata/_edit_lock_ = true
