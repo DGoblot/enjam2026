@@ -7,7 +7,7 @@ extends Control
 @onready var screen_button := %ButtonScreen
 @onready var sound := %AudioStreamPlayer2D
 
-@export var nextImage: Node
+@export var arrayZoomArea: Array[Node]
 
 func _ready() -> void:
 	screen_button.pressed.connect(take_screenshoot)
@@ -21,7 +21,14 @@ func on_visibility_changed() -> void:
 		camera.enabled = false
 		sound.stop()
 
+func hideZoomArea():
+	if (arrayZoomArea.size() > 0):
+		for node in arrayZoomArea:
+			node.hideZoomButton()
+
 func take_screenshoot() -> void:
+	hideZoomArea()
+	screen_button.hide()
 	# Create the SubViewport 
 	var sub_viewport = SubViewport.new()
 	# Add the SubViewport to the tree
