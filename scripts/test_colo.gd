@@ -7,6 +7,8 @@ extends Control
 @onready var screen_button := %ButtonScreen
 @onready var sound := %AudioStreamPlayer2D
 
+@export var nextImage: Node
+
 func _ready() -> void:
 	screen_button.pressed.connect(take_screenshoot)
 	visibility_changed.connect(on_visibility_changed)
@@ -42,7 +44,8 @@ func take_screenshoot() -> void:
 	img.save_png(screenshot_path)
 	_addImageToJSON(screenshot_path)
 	sub_viewport.queue_free()
-	main.next_scene(self, next)
+	_fadeOut()
+	_sceneTransition()
 	
 
 func _addImageToJSON(screenshot_path: String):
@@ -52,3 +55,17 @@ func _addImageToJSON(screenshot_path: String):
 	json_file.store_string(JSON.stringify(arrayListmagesPath, "\t"))
 	json_file.close()
 	
+func _fadeOut():
+	var tween = get_tree().create_tween()
+	tween.tween_property(screen_button, "modulate:a", 0, 1)
+	tween.play()
+	await tween.finished
+	tween.kill()
+
+func _sceneTransition():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "modulate", Color(0,0,0), 1)
+	tween.play()
+	await tween.finished
+	tween.kill()
+	main.next_scene(self, next)
