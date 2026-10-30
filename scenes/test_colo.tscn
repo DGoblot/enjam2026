@@ -65,7 +65,7 @@ offset_top = 645.0
 offset_right = 963.0
 offset_bottom = 645.0
 scale = Vector2(0.525, 0.525)
-text = "Ce jour-là, c’était la première fois que je séchais les cours du soir. Mon ami Cheng nous a proposé de venir finir une œuvre qu’il avait commencée sur le mur d’un bâtiment abandonné. Cheng était impulsif et se mettait parfois dans des situations dangereuses ; on l'embrouillait souvent à cause de ça, mais c’était aussi une réelle bouffée d’air frais. Il nous a beaucoup poussés à remettre en question l’autorité de nos professeurs et de nos parents, et à chercher à découvrir réellement qui nous étions. Je pense que si je suis devenu artiste plus tard, c’est en partie grâce à lui. "
+text = "Mes parents m’avaient offert ce chiot le jour même du festival. Il n’avait que quelques semaines, je l’ai appelé Lucky. Il tenait son jouet préféré dans sa bouche.  Il était petit, mignon et très attachant. Je ne le savais pas encore, mais ça allait être très important pour moi. À partir de ce jour-là, il m’accompagnait toujours ; je le prenais partout où j'allais, et il ne me quittait jamais, il me tenait toujours compagnie. Il est même devenu ma principale source de soutien et de bonheur. Il m’a aidé à traverser énormément de périodes difficiles. C’était vraiment un chien incroyable."
 metadata/_edit_lock_ = true
 
 [node name="ZoomArea2" parent="." unique_id=1700831280 instance=ExtResource("3_p6wxt")]
@@ -75,7 +75,17 @@ offset_top = 85.0
 offset_right = 91.0
 offset_bottom = 85.0
 scale = Vector2(0.475, 0.475)
-text = "La première fois que j’ai vu Wei, je ne l’ai même pas calculée. Elle traînait énormément avec Xin et je me suis donc mis à la découvrir au fur et à mesure qu’on traînait ensemble. Elle est courageuse, persévérante et furieusement rebelle. Elle avait aussi des défauts, bien sûr : elle était grincheuse et pouvait être une vraie tête de mule. Mais c’est aussi ce qui faisait son charme. De plus, nous partagions une passion commune : le dessin. On s’était promis de postuler ensemble aux Beaux-Arts de Paris à nos 18 ans. Je lui avais tricoté et offert ce pull, qui illustre ce qu’elle représentait pour moi."
+text = "Maman a toujours été fière de nous, pour les petites comme les grandes réussites. Elle était toujours patiente et tolérante avec nous, malgré le fait qu’elle travaillait tard tous les jours. Ma grande sœur Jie de 9 ans avait gribouillé un dessin sur le dos de sa main. Elle l’avait dessiné avec passion en étant très impliquée dans sa réalisation. Ma mère l’arborait fièrement dans la rue comme un trophée. Le dessin représentais ma famille, les enfants sous la forme de fleurs, nos parents en plantes… et ma grand-mère en arbre."
+metadata/_edit_lock_ = true
+
+[node name="ZoomArea3" parent="." unique_id=1251794743 instance=ExtResource("3_p6wxt")]
+layout_mode = 1
+offset_left = 654.9999
+offset_top = 54.999878
+offset_right = 655.0
+offset_bottom = 54.999878
+scale = Vector2(0.525, 0.525)
+text = "Durant le festival de la mi-automne, énormément de lanternes sont suspendues dans les rues. Il y a énormément de motifs et de formes différentes dessinés sur ces lanternes. La nuit, elles brillent et illuminent la rue. Parfois même, leurs motifs se reflètent sur le sol et les murs de la rue. C’était pour moi un vrai spectacle devant lequel je m’émerveillais. Il y avait aussi des lanternes de plein de formes ; certaines, en forme de poissons, me paraissaient comme des poissons magiques qui flottaient dans la rue."
 metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1911980687]
