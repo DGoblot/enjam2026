@@ -148,7 +148,6 @@ func _on_color_button_pressed(_tmp: bool, button: TextureButton) -> void:
 	for button_iterator in color_buttons :
 		button_iterator.disabled = false
 		button_iterator.button_pressed = false
-		print(button_iterator.name)
 	button.disabled = true
 	
 	match button.name:
