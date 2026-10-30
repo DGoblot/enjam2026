@@ -25,7 +25,7 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Scene1" type="Control" unique_id=1596473220]
+[node name="Scene1" type="Control" unique_id=1596473220 node_paths=PackedStringArray("arrayZoomArea")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,6 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_8mrud")
+arrayZoomArea = [NodePath("ZoomArea"), NodePath("ZoomArea2"), NodePath("ZoomArea3")]
 
 [node name="Camera" type="Camera2D" parent="." unique_id=869985340]
 unique_name_in_owner = true

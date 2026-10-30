@@ -26,6 +26,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	lines.scale = Vector2(1/scale.x, 1/scale.y)
 
+func hideZoomButton():
+	button_zoom.hide()
+
 func zoom(button: Button) -> void:
 	if tween:
 		if tween.is_running(): return
