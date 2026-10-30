@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://51tbm6rn0jta" path="res://scenes/test_colo.tscn" id="8_tbmy8"]
 [ext_resource type="PackedScene" uid="uid://bdvl6smu1nyaw" path="res://scenes/scene_2.tscn" id="9_jk1qb"]
 [ext_resource type="PackedScene" uid="uid://cwr7egkwwfe42" path="res://scenes/album.tscn" id="10_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://d1ji6gq114ur4" path="res://assets/chien.png" id="10_5pajh"]
+[ext_resource type="FontFile" uid="uid://ccqf2d5xvwqpa" path="res://windows-xp-title-window.otf" id="11_j7ex8"]
 [ext_resource type="PackedScene" uid="uid://ney70c18vt3k" path="res://scenes/scene_4.tscn" id="14_7b55j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w81ou"]
@@ -127,6 +129,22 @@ grow_vertical = 2
 theme = ExtResource("5_oa1go")
 text = "See albums"
 horizontal_alignment = 1
+
+[node name="Chien" type="Sprite2D" parent="Button" unique_id=724768885]
+position = Vector2(2358, 1127)
+scale = Vector2(0.4693548, 0.46935487)
+texture = ExtResource("10_5pajh")
+
+[node name="LineEdit" type="LineEdit" parent="Button/Chien" unique_id=1043087438]
+offset_left = -1736.4263
+offset_top = -532.646
+offset_right = -1048.2476
+offset_bottom = -393.646
+theme_override_fonts/font = ExtResource("11_j7ex8")
+theme_override_font_sizes/font_size = 90
+placeholder_text = "Nom du chien ?"
+alignment = 1
+max_length = 12
 
 [node name="ComputerOverlay" type="Sprite2D" parent="Button" unique_id=144995906]
 position = Vector2(1581.5, 27.249985)

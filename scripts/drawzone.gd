@@ -21,11 +21,11 @@ var color_buttons: Array[Node]
 var lines_array: Array[Line2D]
 var lines_array_index: int = -1
 
-@export var margin_small := 4
-@export var margin_large := 8
+@export var margin_small := 3
+@export var margin_large := 6
 
 var color: Color = Color.BLACK
-var width: int = 8
+var width: int = 6
 var pencil_material := preload("res://shaders/pencil_shader.tres")
 var eraser_material := preload("res://shaders/eraser_shader.tres")
 var line_material := pencil_material
@@ -103,7 +103,7 @@ func _is_mouse_in_area(pos: Vector2) -> bool:
 func _get_clamped_point(pos: Vector2) -> Vector2:
 	var rect: Rect2 = area.get_global_rect()
 	var clamped : Vector2
-	if width == 8:
+	if width == 6:
 		clamped = Vector2(
 			clamp(pos.x, rect.position.x + margin_small, rect.end.x - margin_small),
 			clamp(pos.y, rect.position.y + margin_small, rect.end.y - margin_small)
@@ -133,13 +133,13 @@ func _on_eraser_button_pressed() -> void:
 		line.queue_free()
 	
 func _on_big_button_pressed(_tmp: bool) -> void:
-	width = 16
+	width = 12
 	small_button.button_pressed = false
 	big_button.disabled = true
 	small_button.disabled = false
 	
 func _on_small_button_pressed(_tmp: bool) -> void:
-	width = 8
+	width = 6
 	big_button.button_pressed = false
 	small_button.disabled = true
 	big_button.disabled = false
