@@ -17,7 +17,7 @@ func _ready() -> void:
 	albumButton.pressed.connect(launch_album)
 	button_intro.pressed.connect(hide_intro)
 	#albumButton.disabled = true
-	_checkIfAlbumIsAvailable()
+	#_checkIfAlbumIsAvailable()
 
 func hide_intro() -> void:
 	if tween:

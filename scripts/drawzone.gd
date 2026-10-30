@@ -144,19 +144,21 @@ func _on_small_button_pressed(_tmp: bool) -> void:
 	small_button.disabled = true
 	big_button.disabled = false
 	
-func _on_color_button_pressed(_tmp: bool, button: Button) -> void:
-	for button_iterator in color_buttons:
+func _on_color_button_pressed(_tmp: bool, button: TextureButton) -> void:
+	for button_iterator in color_buttons :
 		button_iterator.disabled = false
+		button_iterator.button_pressed = false
+		print(button_iterator.name)
 	button.disabled = true
 	
 	match button.name:
 		"ButtonBlack":
-			color = Color.BLACK
+			color = Color("#1C0E0A")
 		"ButtonRed":
-			color = Color.RED
+			color = Color("#D8431B")
 		"ButtonBlue":
-			color = Color.BLUE
+			color = Color("#538A8D")
 		"ButtonGreen":
-			color = Color.GREEN
+			color = Color("#2E8E24")
 		"ButtonYellow":
-			color = Color.YELLOW
+			color = Color("#D9CB92")

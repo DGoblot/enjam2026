@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://bdenoqw3rwd5j" path="res://scripts/zoom_area.gd" id="1_m16hi"]
 [ext_resource type="Script" uid="uid://cd05lv782veq8" path="res://scripts/drawzone.gd" id="1_oy7pb"]
 [ext_resource type="Theme" uid="uid://cy3jqrigehjwu" path="res://shaders/clickable_area_theme.tres" id="1_ve84m"]
+[ext_resource type="Texture2D" uid="uid://hgwmj52x2p30" path="res://assets/UI/4-5.png" id="4_1ppv0"]
 [ext_resource type="Texture2D" uid="uid://dnsv7ahfi4l7e" path="res://assets/crayon1.png" id="4_s4c8b"]
+[ext_resource type="Texture2D" uid="uid://cslfq16cwj7qy" path="res://assets/UI/en_arriere.png" id="5_js8yf"]
 [ext_resource type="Texture2D" uid="uid://bmcqfqkervqf4" path="res://assets/crayon.png" id="5_vv510"]
 [ext_resource type="Script" uid="uid://k6f0xbtpuhy2" path="res://scripts/button_mipmap.gd" id="6_6h3cl"]
+[ext_resource type="Script" uid="uid://b5txfodqhybk3" path="res://scripts/button_mipmap_and_bounce.gd" id="6_a7eyq"]
 [ext_resource type="Texture2D" uid="uid://dk70b8sswk70g" path="res://assets/pinceau2.png" id="7_bxpkf"]
 [ext_resource type="Texture2D" uid="uid://dyhvladmwyrl3" path="res://assets/pinceau.png" id="8_1gd4f"]
 [ext_resource type="Texture2D" uid="uid://cqlh544w88je1" path="res://assets/gommea.png" id="9_hrv4n"]
@@ -15,6 +18,19 @@
 [ext_resource type="Texture2D" uid="uid://cvvxxk6tloxlk" path="res://assets/UI/gros_crayon_actif.png" id="12_hrv4n"]
 [ext_resource type="Texture2D" uid="uid://ca5gwmbmjjj5t" path="res://assets/UI/pztit_crayon.png" id="13_mt0aa"]
 [ext_resource type="Texture2D" uid="uid://c17bpan6w07nb" path="res://assets/UI/pztit_crayon_actif.png" id="14_rwnu2"]
+[ext_resource type="Texture2D" uid="uid://c4q2trxav4vps" path="res://assets/UI/pas_de_couleur_noir.png" id="18_y5s55"]
+[ext_resource type="Texture2D" uid="uid://b0exahxid3oqs" path="res://assets/UI/pas_de_couleur_noir_N.png" id="19_26a5g"]
+[ext_resource type="Texture2D" uid="uid://bxim4c8xmjjlu" path="res://assets/UI/pas_de_couleur_rouge_N.png" id="20_1wedv"]
+[ext_resource type="Texture2D" uid="uid://cynssjc0ilxk8" path="res://assets/UI/pas_de_couleur_rouge.png" id="21_8wuxx"]
+[ext_resource type="Texture2D" uid="uid://cfqd4a8rixni0" path="res://assets/UI/pas_de_couleur_bleu.png" id="22_47hhj"]
+[ext_resource type="Texture2D" uid="uid://djqdgr066aph8" path="res://assets/UI/pas_de_couleur_bleuN.png" id="23_dp5js"]
+[ext_resource type="Texture2D" uid="uid://drbvs2f3rl5k3" path="res://assets/UI/pas_de_couleur_vertN.png" id="24_77xvw"]
+[ext_resource type="Texture2D" uid="uid://csygg5ca0exn8" path="res://assets/UI/pas_de_couleur_vert.png" id="25_231af"]
+[ext_resource type="Texture2D" uid="uid://cvxhm02dmab83" path="res://assets/UI/pas_de_couleur_jaune.png" id="26_ein07"]
+[ext_resource type="Texture2D" uid="uid://c54lwktiwfi1t" path="res://assets/UI/pas_de_couleur_jauneN.png" id="27_o1acl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ppv0"]
+load_path = "res://.godot/imported/pas_de_couleur_noir_N.png-c6262b36f0033d28de4e6fb9fb948f79.ctex"
 
 [node name="ZoomArea" type="Control" unique_id=1688144259]
 layout_mode = 3
@@ -107,15 +123,18 @@ offset_right = 1560.0
 offset_bottom = 1201.0
 color = Color(0.5294118, 0.16078432, 0.11372549, 1)
 
-[node name="ButtonDezoom" type="Button" parent="UI" unique_id=157676605]
+[node name="ButtonDezoom" type="TextureButton" parent="UI" unique_id=163976079]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1508.0
-offset_top = 8.0
-offset_right = 1860.0
-offset_bottom = 220.0
-theme_override_font_sizes/font_size = 149
-text = "Back"
+offset_left = 1736.0
+offset_top = 13.0
+offset_right = 1897.0
+offset_bottom = 181.0
+texture_normal = ExtResource("4_1ppv0")
+texture_pressed = ExtResource("5_js8yf")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("6_a7eyq")
 
 [node name="Buttons" type="Control" parent="UI" unique_id=414888765]
 anchors_preset = 0
@@ -206,60 +225,85 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ButtonBlack" type="Button" parent="UI/Buttons/ColorButtons" unique_id=377115979]
+[node name="ButtonBlack" type="TextureButton" parent="UI/Buttons/ColorButtons" unique_id=170869905]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1604.0
-offset_top = 366.0
-offset_right = 1798.0
-offset_bottom = 473.0
-theme_override_font_sizes/font_size = 72
+offset_left = 1046.0
+offset_top = 19.0
+offset_right = 3009.57
+offset_bottom = 1102.0
 toggle_mode = true
-text = "Black"
+texture_normal = ExtResource("18_y5s55")
+texture_pressed = ExtResource("19_26a5g")
+texture_disabled = SubResource("CompressedTexture2D_1ppv0")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("6_6h3cl")
+metadata/_edit_lock_ = true
 
-[node name="ButtonRed" type="Button" parent="UI/Buttons/ColorButtons" unique_id=245507524]
+[node name="ButtonRed" type="TextureButton" parent="UI/Buttons/ColorButtons" unique_id=945015496]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1666.0
-offset_top = 239.0
-offset_right = 1806.0
-offset_bottom = 346.0
-theme_override_font_sizes/font_size = 72
+offset_left = 1217.0
+offset_top = 181.0
+offset_right = 2823.0
+offset_bottom = 1585.0
 toggle_mode = true
-text = "Red"
+texture_normal = ExtResource("20_1wedv")
+texture_pressed = ExtResource("21_8wuxx")
+texture_disabled = ExtResource("21_8wuxx")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("6_6h3cl")
+metadata/_edit_lock_ = true
 
-[node name="ButtonBlue" type="Button" parent="UI/Buttons/ColorButtons" unique_id=381682990]
+[node name="ButtonBlue" type="TextureButton" parent="UI/Buttons/ColorButtons" unique_id=984673442]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1689.0
-offset_top = 522.0
-offset_right = 1852.0
-offset_bottom = 629.0
-theme_override_font_sizes/font_size = 72
+offset_left = 1054.0
+offset_top = 21.0
+offset_right = 2551.0
+offset_bottom = 1481.0
 toggle_mode = true
-text = "Blue"
+texture_normal = ExtResource("22_47hhj")
+texture_pressed = ExtResource("23_dp5js")
+texture_disabled = ExtResource("23_dp5js")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("6_6h3cl")
+metadata/_edit_lock_ = true
 
-[node name="ButtonGreen" type="Button" parent="UI/Buttons/ColorButtons" unique_id=757212268]
+[node name="ButtonGreen" type="TextureButton" parent="UI/Buttons/ColorButtons" unique_id=44301211]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1625.0
-offset_top = 665.0
-offset_right = 1845.0
-offset_bottom = 772.0
-theme_override_font_sizes/font_size = 72
+offset_left = 1238.0
+offset_top = 4.0
+offset_right = 2781.0
+offset_bottom = 1397.0
 toggle_mode = true
-text = "Green"
+texture_normal = ExtResource("24_77xvw")
+texture_pressed = ExtResource("25_231af")
+texture_disabled = ExtResource("25_231af")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("6_6h3cl")
+metadata/_edit_lock_ = true
 
-[node name="ButtonYellow" type="Button" parent="UI/Buttons/ColorButtons" unique_id=1526460977]
+[node name="ButtonYellow" type="TextureButton" parent="UI/Buttons/ColorButtons" unique_id=1245092111]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1559.0
-offset_top = 842.0
-offset_right = 1794.0
-offset_bottom = 949.0
-theme_override_font_sizes/font_size = 72
+offset_left = 1154.0
+offset_top = 188.0
+offset_right = 2648.0
+offset_bottom = 1347.0
 toggle_mode = true
-text = "Yellow"
+texture_normal = ExtResource("26_ein07")
+texture_pressed = ExtResource("27_o1acl")
+texture_disabled = ExtResource("27_o1acl")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("6_6h3cl")
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="UI" unique_id=777959523]
 unique_name_in_owner = true
