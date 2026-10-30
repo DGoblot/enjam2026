@@ -17,6 +17,7 @@ var played := false
 func _ready() -> void:
 	playButton.pressed.connect(play)
 	albumButton.pressed.connect(launch_album)
+	_checkIfAlbumIsAvailable()
 	button_intro.pressed.connect(hide_intro)
 
 func hide_intro() -> void:
@@ -67,9 +68,13 @@ func _checkIfAlbumIsAvailable():
 	var file = FileAccess.open("res://scripts/listImagesAlbum.json", FileAccess.READ)
 	var json_string = file.get_as_text()
 	file.close()
-	if (json_string != "" ):
+	if (!JSON.parse_string(json_string).is_empty()):
 		albumButton.disabled = false
+		album_scene._allImages = album_scene._load_json_file()
+		album_scene._putImageOnPage(0)
 		albumButton.texture_normal = load("res://assets/dissier_fermer.png")
+	
+		
 	
 func next_scene(current: Node, next : int) -> void:
 	current.hide()

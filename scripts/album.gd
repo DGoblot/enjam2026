@@ -12,7 +12,6 @@ var actualPage = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	button_close.pressed.connect(_on_button_close_pressed)
-	return
 	_allImages = _load_json_file()
 	_putImageOnPage(0)
 	buttonPreviousPage.disabled = true
@@ -21,6 +20,7 @@ func _on_button_close_pressed() -> void:
 	hide()
 
 func _load_json_file() -> Array:
+	print("on load")
 	if not FileAccess.file_exists("res://scripts/listImagesAlbum.json"):
 		print("File not found")
 	var file = FileAccess.open("res://scripts/listImagesAlbum.json", FileAccess.READ)
@@ -28,11 +28,14 @@ func _load_json_file() -> Array:
 	file.close()
 	var listImages = JSON.parse_string(json_string)
 	numberPages = int(listImages.size() / 2)
+	print("liste de images")
+	print(listImages)
 	return listImages
 
 func _putImageOnPage(actualPage: int) -> void:
 	var index := actualPage * 2
-	frameArray[0].texture = load(_allImages[index])
+	if (index < _allImages.size()):
+		frameArray[0].texture = load(_allImages[index])
 	if (index + 1 < _allImages.size()):
 		frameArray[1].texture = load(_allImages[index + 1])
 	else:
