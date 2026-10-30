@@ -1,16 +1,23 @@
 extends Control
 
 @onready var main : = $/root/MainMenu
+@export var next : int
+@onready var camera := %Camera
 
 @onready var screen_button := %ButtonScreen
-@export var music : AudioStreamMP3
+@onready var sound := %AudioStreamPlayer2D
 
 func _ready() -> void:
 	screen_button.pressed.connect(take_screenshoot)
 	visibility_changed.connect(on_visibility_changed)
 	
 func on_visibility_changed() -> void:
-	main.change_music(music)
+	if visible:
+		camera.enabled = true
+		sound.play()
+	else:
+		camera.enabled = false
+		sound.stop()
 
 func take_screenshoot() -> void:
 	# Create the SubViewport 
@@ -35,6 +42,7 @@ func take_screenshoot() -> void:
 	img.save_png(screenshot_path)
 	_addImageToJSON(screenshot_path)
 	sub_viewport.queue_free()
+	main.next_scene(self, next)
 	
 
 func _addImageToJSON(screenshot_path: String):

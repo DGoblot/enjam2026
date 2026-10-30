@@ -18,8 +18,6 @@ func _ready() -> void:
 	playButton.pressed.connect(play)
 	albumButton.pressed.connect(launch_album)
 	button_intro.pressed.connect(hide_intro)
-	#albumButton.disabled = true
-	#_checkIfAlbumIsAvailable()
 
 func hide_intro() -> void:
 	if tween:
@@ -72,8 +70,11 @@ func _checkIfAlbumIsAvailable():
 	if (json_string != "" ):
 		albumButton.disabled = false
 		albumButton.texture_normal = load("res://assets/dissier_fermer.png")
-
-
-func change_music(music : AudioStreamMP3):
-	sound.stream = music
-	sound.playing = true
+	
+func next_scene(current: Node, next : int) -> void:
+	current.hide()
+	print(next)
+	if next == 4:
+		_checkIfAlbumIsAvailable()
+	else:
+		%Scenes.get_child(next).show()

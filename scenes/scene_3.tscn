@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://blmcdh1bop4ie"]
+
+[ext_resource type="Script" uid="uid://blufc75fnrecq" path="res://scripts/test_colo.gd" id="1_toq7q"]
+[ext_resource type="AudioStream" uid="uid://cxkhjknp6yptr" path="res://assets/Music/Festival.MP3" id="2_r2pi8"]
+[ext_resource type="Texture2D" uid="uid://864p2vlif4iu" path="res://assets/BG/IMG_2509.png" id="3_lmrsu"]
+[ext_resource type="Texture2D" uid="uid://cxubd2t1nnqbd" path="res://assets/BG/IMG_2510.png" id="4_087sr"]
+[ext_resource type="Texture2D" uid="uid://b7uejxohisrmw" path="res://assets/BG/IMG_2511.png" id="5_63cu2"]
+[ext_resource type="PackedScene" uid="uid://c1sp5gg070ed5" path="res://scenes/zoom_area.tscn" id="6_gmcgl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w81ou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lmrsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_087sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_63cu2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.5
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6wxt"]
+bg_color = Color(0.7565471, 0.44936168, 0.89151007, 1)
+
+[node name="Scene1" type="Control" unique_id=1596473220]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_toq7q")
+music = ExtResource("2_r2pi8")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=869985340]
+unique_name_in_owner = true
+position = Vector2(960, 540)
+
+[node name="PlaceholderBG" type="AnimatedSprite2D" parent="." unique_id=713735965]
+unique_name_in_owner = true
+position = Vector2(961.41626, 490.99997)
+scale = Vector2(0.54480267, 0.50725806)
+sprite_frames = SubResource("SpriteFrames_w81ou")
+autoplay = "default"
+frame_progress = 0.12656082
+
+[node name="ZoomArea" parent="." unique_id=1688144259 instance=ExtResource("6_gmcgl")]
+layout_mode = 1
+offset_left = 947.0
+offset_top = 607.0
+offset_right = 947.0
+offset_bottom = 607.0
+scale = Vector2(0.525, 0.525)
+text = "Ce jour-là, c’était la première fois que je séchais les cours du soir. Mon ami Cheng nous a proposé de venir finir une œuvre qu’il avait commencée sur le mur d’un bâtiment abandonné. Cheng était impulsif et se mettait parfois dans des situations dangereuses ; on l'embrouillait souvent à cause de ça, mais c’était aussi une réelle bouffée d’air frais. Il nous a beaucoup poussés à remettre en question l’autorité de nos professeurs et de nos parents, et à chercher à découvrir réellement qui nous étions. Je pense que si je suis devenu artiste plus tard, c’est en partie grâce à lui. "
+metadata/_edit_lock_ = true
+
+[node name="ButtonScreen" type="Button" parent="." unique_id=1199653726]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1769.0
+offset_top = 913.0
+offset_right = 1864.0
+offset_bottom = 956.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_p6wxt")
+text = "Screenshot"
+script = ExtResource("1_toq7q")
+
+[node name="ZoomArea2" parent="." unique_id=1700831280 instance=ExtResource("6_gmcgl")]
+layout_mode = 1
+offset_left = 75.0
+offset_top = 21.0
+offset_right = 75.0
+offset_bottom = 21.0
+scale = Vector2(0.475, 0.475)
+text = "La première fois que j’ai vu Wei, je ne l’ai même pas calculée. Elle traînait énormément avec Xin et je me suis donc mis à la découvrir au fur et à mesure qu’on traînait ensemble. Elle est courageuse, persévérante et furieusement rebelle. Elle avait aussi des défauts, bien sûr : elle était grincheuse et pouvait être une vraie tête de mule. Mais c’est aussi ce qui faisait son charme. De plus, nous partagions une passion commune : le dessin. On s’était promis de postuler ensemble aux Beaux-Arts de Paris à nos 18 ans. Je lui avais tricoté et offert ce pull, qui illustre ce qu’elle représentait pour moi."
+metadata/_edit_lock_ = true
