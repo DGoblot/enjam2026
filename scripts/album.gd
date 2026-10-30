@@ -23,9 +23,11 @@ func _load_json_file() -> Array:
 	print("on load")
 	if not FileAccess.file_exists("res://scripts/listImagesAlbum.json"):
 		print("File not found")
-	var file = FileAccess.open("res://scripts/listImagesAlbum.json", FileAccess.READ)
-	var json_string = file.get_as_text()
-	file.close()
+	var json_file = FileAccess.open("res://scripts/listImagesAlbum.json", FileAccess.READ_WRITE)
+	if not json_file:
+		json_file = FileAccess.open("user://listImagesAlbum.json", FileAccess.READ_WRITE)
+	var json_string = json_file.get_as_text()
+	json_file.close()
 	var listImages = JSON.parse_string(json_string)
 	numberPages = int(listImages.size() / 2)
 	print("liste de images")

@@ -72,9 +72,11 @@ func _change_scene(scene_root):
 	get_tree().change_scene_to_file(scene_root)
 
 func _checkIfAlbumIsAvailable():
-	var file = FileAccess.open("res://scripts/listImagesAlbum.json", FileAccess.READ)
-	var json_string = file.get_as_text()
-	file.close()
+	var json_file = FileAccess.open("res://scripts/listImagesAlbum.json", FileAccess.READ_WRITE)
+	if not json_file:
+		json_file = FileAccess.open("user://listImagesAlbum.json", FileAccess.READ_WRITE)
+	var json_string = json_file.get_as_text()
+	json_file.close()
 	if (!JSON.parse_string(json_string).is_empty()):
 		albumButton.disabled = false
 		album_scene._allImages = album_scene._load_json_file()

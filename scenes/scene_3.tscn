@@ -49,7 +49,7 @@ position = Vector2(961.41626, 490.99997)
 scale = Vector2(1.0797747, 1.0814817)
 sprite_frames = SubResource("SpriteFrames_w81ou")
 autoplay = "default"
-frame_progress = 0.53493905
+frame_progress = 0.34387347
 
 [node name="ButtonScreen" type="Button" parent="." unique_id=407620353]
 unique_name_in_owner = true
