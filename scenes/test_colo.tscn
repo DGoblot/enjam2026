@@ -45,7 +45,7 @@ position = Vector2(961.41626, 490.99997)
 scale = Vector2(0.54480267, 0.50725806)
 sprite_frames = SubResource("SpriteFrames_w81ou")
 autoplay = "default"
-frame_progress = 0.42443484
+frame_progress = 0.22183084
 
 [node name="ButtonScreen" type="Button" parent="." unique_id=1199653726]
 unique_name_in_owner = true
@@ -60,20 +60,20 @@ text = "NEXT"
 
 [node name="ZoomArea" parent="." unique_id=1688144259 instance=ExtResource("3_p6wxt")]
 layout_mode = 1
-offset_left = 947.0
-offset_top = 607.0
-offset_right = 947.0
-offset_bottom = 607.0
+offset_left = 963.0
+offset_top = 645.0
+offset_right = 963.0
+offset_bottom = 645.0
 scale = Vector2(0.525, 0.525)
 text = "Ce jour-là, c’était la première fois que je séchais les cours du soir. Mon ami Cheng nous a proposé de venir finir une œuvre qu’il avait commencée sur le mur d’un bâtiment abandonné. Cheng était impulsif et se mettait parfois dans des situations dangereuses ; on l'embrouillait souvent à cause de ça, mais c’était aussi une réelle bouffée d’air frais. Il nous a beaucoup poussés à remettre en question l’autorité de nos professeurs et de nos parents, et à chercher à découvrir réellement qui nous étions. Je pense que si je suis devenu artiste plus tard, c’est en partie grâce à lui. "
 metadata/_edit_lock_ = true
 
 [node name="ZoomArea2" parent="." unique_id=1700831280 instance=ExtResource("3_p6wxt")]
 layout_mode = 1
-offset_left = 75.0
-offset_top = 21.0
-offset_right = 75.0
-offset_bottom = 21.0
+offset_left = 91.0
+offset_top = 85.0
+offset_right = 91.0
+offset_bottom = 85.0
 scale = Vector2(0.475, 0.475)
 text = "La première fois que j’ai vu Wei, je ne l’ai même pas calculée. Elle traînait énormément avec Xin et je me suis donc mis à la découvrir au fur et à mesure qu’on traînait ensemble. Elle est courageuse, persévérante et furieusement rebelle. Elle avait aussi des défauts, bien sûr : elle était grincheuse et pouvait être une vraie tête de mule. Mais c’est aussi ce qui faisait son charme. De plus, nous partagions une passion commune : le dessin. On s’était promis de postuler ensemble aux Beaux-Arts de Paris à nos 18 ans. Je lui avais tricoté et offert ce pull, qui illustre ce qu’elle représentait pour moi."
 metadata/_edit_lock_ = true

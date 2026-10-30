@@ -45,7 +45,7 @@ position = Vector2(968.4501, 543.2118)
 scale = Vector2(0.5587233, 0.44257116)
 sprite_frames = SubResource("SpriteFrames_w81ou")
 autoplay = "default"
-frame_progress = 0.2961973
+frame_progress = 0.8078782
 
 [node name="ButtonScreen" type="Button" parent="." unique_id=1199653726]
 unique_name_in_owner = true
@@ -60,28 +60,28 @@ text = "NEXT"
 
 [node name="ZoomArea" parent="." unique_id=1688144259 instance=ExtResource("3_ccscm")]
 layout_mode = 1
-offset_left = 949.0
-offset_top = -53.999992
-offset_right = 949.0
-offset_bottom = -54.0
+offset_left = 955.0
+offset_top = -5.999996
+offset_right = 955.0
+offset_bottom = -6.0
 scale = Vector2(0.645, 0.645)
 text = "Ici c'est papy"
 
 [node name="ZoomArea2" parent="." unique_id=1700831280 instance=ExtResource("3_ccscm")]
 layout_mode = 1
-offset_left = 326.0
-offset_top = 653.0
-offset_right = 326.0
-offset_bottom = 653.0
+offset_left = 355.0
+offset_top = 682.0
+offset_right = 355.0
+offset_bottom = 682.0
 scale = Vector2(0.41, 0.41)
 text = "La c'est mami (elle est très vieille)"
 
 [node name="ZoomArea3" parent="." unique_id=259370772 instance=ExtResource("3_ccscm")]
 layout_mode = 1
-offset_left = -61.0
-offset_top = 527.0
-offset_right = -61.0
-offset_bottom = 527.0
+offset_left = -74.0
+offset_top = 567.0
+offset_right = -74.0
+offset_bottom = 567.0
 scale = Vector2(0.41, 0.41)
 text = "La c'est mami (elle est très vieille)"
 
