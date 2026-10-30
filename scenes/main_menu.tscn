@@ -187,3 +187,5 @@ unique_name_in_owner = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1979285525]
 position = Vector2(960, 540)
+
+[connection signal="visibility_changed" from="Scenes/Album" to="." method="_on_album_visibility_changed"]
