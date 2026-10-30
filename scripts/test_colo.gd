@@ -36,7 +36,7 @@ func take_screenshoot() -> void:
 	sub_viewport.canvas_transform.origin = Vector2(-0, 0)
 	var date = Time.get_date_string_from_system().replace(".", "_")
 	var time = Time.get_time_string_from_system().replace(":", "")
-	var screenshot_path = "res://Images/screenshot_%s_%s.png" % [date, time]
+	var screenshot_path = "res://screenshot_%s_%s.png" % [date, time]
 	# Wait for the next frame to render
 	await RenderingServer.frame_post_draw
 	# Grab the image, save it and free the SubViewport

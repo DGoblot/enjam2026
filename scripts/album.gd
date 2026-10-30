@@ -33,11 +33,24 @@ func _load_json_file() -> Array:
 	return listImages
 
 func _putImageOnPage(actualPage: int) -> void:
+	
+	
 	var index := actualPage * 2
+	
 	if (index < _allImages.size()):
-		frameArray[0].texture = load(_allImages[index])
+		var file = FileAccess.open(_allImages[index], FileAccess.READ)
+		var buffer = file.get_buffer(file.get_length())
+		var image = Image.new()
+		var error = image.load_png_from_buffer(buffer)
+		var texture = ImageTexture.create_from_image(image)
+		frameArray[0].texture = texture
 	if (index + 1 < _allImages.size()):
-		frameArray[1].texture = load(_allImages[index + 1])
+		var file = FileAccess.open(_allImages[index+1], FileAccess.READ)
+		var buffer = file.get_buffer(file.get_length())
+		var image = Image.new()
+		var error = image.load_png_from_buffer(buffer)
+		var texture = ImageTexture.create_from_image(image)
+		frameArray[1].texture = texture
 	else:
 		frameArray[1].texture = null
 	
