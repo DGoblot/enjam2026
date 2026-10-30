@@ -7,13 +7,21 @@
 [ext_resource type="Texture2D" uid="uid://7xr2r8goqpej" path="res://assets/dissier_-_Copie.png" id="4_8ln24"]
 [ext_resource type="Texture2D" uid="uid://bynxmtwq575kh" path="res://assets/textre_1.png" id="5_7b55j"]
 [ext_resource type="Theme" uid="uid://d8xmnw53837n" path="res://shaders/text_theme.tres" id="5_oa1go"]
-[ext_resource type="Texture2D" uid="uid://d2qsf1xnio6h6" path="res://assets/dissier_fermer.png" id="5_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://mfagm50sk3dv" path="res://assets/textre_2.png" id="6_5pajh"]
 [ext_resource type="Texture2D" uid="uid://be6vvnwnqs0lv" path="res://assets/167-1676577_nintendofan12s-fun-stuff-images-windows-xp-desktop-windows.png" id="6_rtw2f"]
 [ext_resource type="Script" uid="uid://b5txfodqhybk3" path="res://scripts/button_mipmap_and_bounce.gd" id="7_flqon"]
 [ext_resource type="PackedScene" uid="uid://51tbm6rn0jta" path="res://scenes/test_colo.tscn" id="8_tbmy8"]
 [ext_resource type="PackedScene" uid="uid://bdvl6smu1nyaw" path="res://scenes/scene_2.tscn" id="9_jk1qb"]
 [ext_resource type="PackedScene" uid="uid://cwr7egkwwfe42" path="res://scenes/album.tscn" id="10_5dd4i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w81ou"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ajci"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcqid"]
+bg_color = Color(0, 0, 0.023529412, 1)
 
 [node name="MainMenu" type="Control" unique_id=92239897]
 layout_mode = 3
@@ -98,7 +106,6 @@ offset_bottom = 1674.0
 pivot_offset_ratio = Vector2(0.275, 0.455)
 disabled = true
 texture_normal = ExtResource("4_8ln24")
-texture_pressed = ExtResource("5_rtw2f")
 ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("7_flqon")
@@ -149,3 +156,18 @@ layout_mode = 1
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+
+[node name="ButtonIntro" type="Button" parent="." unique_id=1188699711]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_oa1go")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w81ou")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ajci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rcqid")
+text = "Alors en fait c'est l'histoire de quelqu'un qui fait quelque chose"
+autowrap_mode = 2

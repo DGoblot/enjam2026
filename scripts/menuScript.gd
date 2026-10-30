@@ -2,8 +2,11 @@ extends Control
 
 var tween: Tween
 
-@onready var playButton = %StartButton
-@onready var albumButton = %AlbumButton
+var played := false
+
+@onready var playButton := %StartButton
+@onready var albumButton := %AlbumButton
+@onready var button_intro := %ButtonIntro
 
 @onready var album_scene := %Album
 @onready var scene1 := %Scene1
@@ -12,8 +15,26 @@ var tween: Tween
 func _ready() -> void:
 	playButton.pressed.connect(play)
 	albumButton.pressed.connect(launch_album)
+	button_intro.pressed.connect(hide_intro)
 	#albumButton.disabled = true
 	_checkIfAlbumIsAvailable()
+
+func hide_intro() -> void:
+	if tween:
+		if tween.is_running(): return
+		tween.kill()
+	tween = get_tree().create_tween()
+	button_intro.add_theme_color_override("font_color",Color.TRANSPARENT)
+	button_intro.add_theme_color_override("font_hover_color", Color.TRANSPARENT)
+	button_intro.add_theme_color_override("font_outline_color", Color.TRANSPARENT)
+	var stylebox = button_intro.get_theme_stylebox("normal").duplicate() as StyleBoxFlat
+	button_intro.add_theme_stylebox_override("normal", stylebox)
+	button_intro.add_theme_stylebox_override("hover", stylebox)
+	button_intro.add_theme_color_override("font_color",Color.TRANSPARENT)
+
+	tween.tween_property(stylebox, "bg_color", Color.TRANSPARENT, 0.5)
+	await tween.finished
+	button_intro.hide()
 
 func play() -> void:
 	if tween:
@@ -48,3 +69,4 @@ func _checkIfAlbumIsAvailable():
 	file.close()
 	if (json_string != "" ):
 		albumButton.disabled = false
+		albumButton.texture_normal = load("res://assets/dissier_fermer.png")
