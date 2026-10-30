@@ -1,7 +1,7 @@
 extends Control
 
 @onready var screen_button := %ButtonScreen
-@export var arrayAllImage: Array[Node]
+@export var nextImage: Node
 var index = 0
 
 func _ready() -> void:
@@ -30,7 +30,8 @@ func take_screenshoot() -> void:
 	img.save_png(screenshot_path)
 	_addImageToJSON(screenshot_path)
 	sub_viewport.queue_free()
-	
+	_fadeOut()
+	_sceneTransition()
 
 func _addImageToJSON(screenshot_path: String):
 	var json_file = FileAccess.open("res://scripts/listImagesAlbum.json", FileAccess.READ_WRITE)
@@ -45,10 +46,16 @@ func _fadeOut():
 	tween.play()
 	await tween.finished
 	tween.kill()
-	screen_button.add_theme_stylebox_override("normal").a = 1
+
+func _sceneTransition():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "modulate", Color(0,0,0), 1)
+	tween.play()
+	await tween.finished
+	tween.kill()
+	_changeImage()
 
 func _changeImage():
-	if (index + 1 <= arrayAllImage.size()):
-		arrayAllImage[index].visible = false
-		index += 1
-		arrayAllImage[index].visible = true
+	self.visible = false
+	if (nextImage != null):
+		nextImage.visible = true
