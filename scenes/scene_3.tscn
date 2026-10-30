@@ -1,33 +1,35 @@
 [gd_scene format=3 uid="uid://blmcdh1bop4ie"]
 
 [ext_resource type="Script" uid="uid://blufc75fnrecq" path="res://scripts/test_colo.gd" id="1_toq7q"]
-[ext_resource type="AudioStream" uid="uid://cxkhjknp6yptr" path="res://assets/Music/Festival.MP3" id="2_r2pi8"]
-[ext_resource type="Texture2D" uid="uid://864p2vlif4iu" path="res://assets/BG/IMG_2509.png" id="3_lmrsu"]
-[ext_resource type="Texture2D" uid="uid://cxubd2t1nnqbd" path="res://assets/BG/IMG_2510.png" id="4_087sr"]
-[ext_resource type="Texture2D" uid="uid://b7uejxohisrmw" path="res://assets/BG/IMG_2511.png" id="5_63cu2"]
+[ext_resource type="Texture2D" uid="uid://d3akve6b1xaij" path="res://assets/BG/IMG_2541.png" id="2_toq7q"]
+[ext_resource type="Texture2D" uid="uid://dxt3p63s3o4bs" path="res://assets/BG/IMG_2542.png" id="3_r2pi8"]
+[ext_resource type="Texture2D" uid="uid://cxdvqtk577c1m" path="res://assets/BG/IMG_2543.png" id="4_lmrsu"]
+[ext_resource type="Texture2D" uid="uid://bhfcpb8mr3nk2" path="res://assets/BG/IMG_2544.png" id="5_087sr"]
 [ext_resource type="PackedScene" uid="uid://c1sp5gg070ed5" path="res://scenes/zoom_area.tscn" id="6_gmcgl"]
+[ext_resource type="Theme" uid="uid://d8xmnw53837n" path="res://shaders/text_theme.tres" id="6_lmrsu"]
+[ext_resource type="AudioStream" uid="uid://15ap7llwijvd" path="res://assets/Music/Resto.MP3" id="7_r2pi8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w81ou"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_lmrsu")
+"texture": ExtResource("2_toq7q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_087sr")
+"texture": ExtResource("3_r2pi8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_63cu2")
+"texture": ExtResource("4_lmrsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_087sr")
 }],
 "loop": 1,
 "name": &"default",
-"speed": 1.5
+"speed": 2.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6wxt"]
-bg_color = Color(0.7565471, 0.44936168, 0.89151007, 1)
-
-[node name="Scene1" type="Control" unique_id=1596473220]
+[node name="Scene3" type="Control" unique_id=1596473220]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,7 +38,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_toq7q")
-music = ExtResource("2_r2pi8")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=869985340]
 unique_name_in_owner = true
@@ -45,38 +46,49 @@ position = Vector2(960, 540)
 [node name="PlaceholderBG" type="AnimatedSprite2D" parent="." unique_id=713735965]
 unique_name_in_owner = true
 position = Vector2(961.41626, 490.99997)
-scale = Vector2(0.54480267, 0.50725806)
+scale = Vector2(1.0797747, 1.0814817)
 sprite_frames = SubResource("SpriteFrames_w81ou")
 autoplay = "default"
-frame_progress = 0.12656082
+frame_progress = 0.53493905
+
+[node name="ButtonScreen" type="Button" parent="." unique_id=407620353]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1696.0
+offset_top = 958.0
+offset_right = 1899.0
+offset_bottom = 1050.0
+theme = ExtResource("6_lmrsu")
+theme_override_font_sizes/font_size = 70
+text = "NEXT"
 
 [node name="ZoomArea" parent="." unique_id=1688144259 instance=ExtResource("6_gmcgl")]
 layout_mode = 1
-offset_left = 947.0
-offset_top = 607.0
-offset_right = 947.0
-offset_bottom = 607.0
-scale = Vector2(0.525, 0.525)
-text = "Ce jour-là, c’était la première fois que je séchais les cours du soir. Mon ami Cheng nous a proposé de venir finir une œuvre qu’il avait commencée sur le mur d’un bâtiment abandonné. Cheng était impulsif et se mettait parfois dans des situations dangereuses ; on l'embrouillait souvent à cause de ça, mais c’était aussi une réelle bouffée d’air frais. Il nous a beaucoup poussés à remettre en question l’autorité de nos professeurs et de nos parents, et à chercher à découvrir réellement qui nous étions. Je pense que si je suis devenu artiste plus tard, c’est en partie grâce à lui. "
-metadata/_edit_lock_ = true
-
-[node name="ButtonScreen" type="Button" parent="." unique_id=1199653726]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 1769.0
-offset_top = 913.0
-offset_right = 1864.0
-offset_bottom = 956.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_p6wxt")
-text = "Screenshot"
-script = ExtResource("1_toq7q")
+offset_left = 725.0
+offset_top = 774.0
+offset_right = 725.0
+offset_bottom = 774.0
+scale = Vector2(0.32, 0.32)
+text = "Depuis que nous étions tout petits, Cheng et moi fêtions nos anniversaires ensemble. Nous étions les meilleurs amis du monde. Mais je me souviens que cette fois-là, il était parti à Hong Kong avec sa famille et n’avait pas pu assister à ma fête d’anniversaire. Il m’avait envoyé une carte de vœux. Hahaha, je me souviens qu’il dessinait sur la carte. Il montrait déjà son talent artistique à l’époque. Et j’ai encore cette carte chez moi."
 
 [node name="ZoomArea2" parent="." unique_id=1700831280 instance=ExtResource("6_gmcgl")]
 layout_mode = 1
-offset_left = 75.0
-offset_top = 21.0
-offset_right = 75.0
-offset_bottom = 21.0
-scale = Vector2(0.475, 0.475)
-text = "La première fois que j’ai vu Wei, je ne l’ai même pas calculée. Elle traînait énormément avec Xin et je me suis donc mis à la découvrir au fur et à mesure qu’on traînait ensemble. Elle est courageuse, persévérante et furieusement rebelle. Elle avait aussi des défauts, bien sûr : elle était grincheuse et pouvait être une vraie tête de mule. Mais c’est aussi ce qui faisait son charme. De plus, nous partagions une passion commune : le dessin. On s’était promis de postuler ensemble aux Beaux-Arts de Paris à nos 18 ans. Je lui avais tricoté et offert ce pull, qui illustre ce qu’elle représentait pour moi."
-metadata/_edit_lock_ = true
+offset_left = 167.00003
+offset_top = 484.00006
+offset_right = 167.0
+offset_bottom = 484.0
+scale = Vector2(0.33, 0.33)
+text = "C’était le cadeau d’anniversaire de mes 10 ans mais je ne m’en rappelle pas très bien. peut-être que c'était un livre ? Un jouet LEGO ? Une poupée ? Un instrument ? Un ensemble d’outils de dessin ? Ou autre chose…Même si je ne me souviens plus exactement de ce que c’était, je me rappelle de ma famille autour de moi, et de mon plaisir en l’ouvrant. J’étais super heureuse en recevant ce cadeau, c’était quelque chose que je voulais depuis longtemps à l’époque."
+
+[node name="ZoomArea3" parent="." unique_id=1530560685 instance=ExtResource("6_gmcgl")]
+layout_mode = 1
+offset_left = 525.0
+offset_top = 158.0
+offset_right = 525.0
+offset_bottom = 158.0
+scale = Vector2(0.3, 0.3)
+text = "Lucky avait bien grandi déja à cette période. Il s'asseyait toujours sagement à côté de Mamie Fang, c’était vraiment mignon.C’était la meilleure mamie au monde. Je me souviens encore du goût des plats qu’elle préparait, de l’odeur d'œufs et de tomates qui enrobait la salle à chaque fois qu’elle cuisinait. Cela va faire bientôt 20 ans qu’elle n’est plus là, je ne me souviens pas précisément de son visage. Cependant, je me rappelle que ses yeux étaient toujours brillants et pleins de vie. Les rides de son visage ne parvenaient pas à masquer son doux sourire. Elle me manque beaucoup pour dire la vérité…"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1035130550]
+unique_name_in_owner = true
+stream = ExtResource("7_r2pi8")

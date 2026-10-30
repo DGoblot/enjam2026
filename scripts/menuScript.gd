@@ -2,6 +2,9 @@ extends Control
 
 var tween: Tween
 
+const JSON_PATH = "user://listImagesAlbum.json"
+const DEFAULT_JSON_PATH = "res://scripts/listImagesAlbum.json"
+
 @onready var sound := %AudioStreamPlayer2D
 
 var played := false
@@ -15,10 +18,13 @@ var played := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	sound.play()
 	playButton.pressed.connect(play)
 	albumButton.pressed.connect(launch_album)
+	init_json()
 	_checkIfAlbumIsAvailable()
 	button_intro.pressed.connect(hide_intro)
+	
 
 func hide_intro() -> void:
 	if tween:
@@ -48,6 +54,7 @@ func play() -> void:
 	tween.tween_property(playButton, "scale", Vector2.ONE, 0.05).set_trans(Tween.TRANS_BOUNCE)
 	await tween.finished
 	scene1.show()
+	sound.stop()
 
 func launch_album() -> void:
 	if tween:
@@ -83,3 +90,23 @@ func next_scene(current: Node, next : int) -> void:
 		_checkIfAlbumIsAvailable()
 	else:
 		%Scenes.get_child(next).show()
+		
+func init_json():
+	if not FileAccess.file_exists(JSON_PATH):
+		print("wow")
+		var default_file = FileAccess.open(DEFAULT_JSON_PATH, FileAccess.READ)
+
+		if default_file == null:
+			push_error(FileAccess.get_open_error())
+			return
+		
+		var content = default_file.get_as_text()
+
+		var save_file = FileAccess.open(JSON_PATH, FileAccess.WRITE)
+
+		if save_file == null:
+			push_error(FileAccess.get_open_error())
+			return
+
+		save_file.store_string(content)
+		

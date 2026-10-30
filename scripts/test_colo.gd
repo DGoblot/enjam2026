@@ -36,7 +36,7 @@ func take_screenshoot() -> void:
 	sub_viewport.canvas_transform.origin = Vector2(-0, 0)
 	var date = Time.get_date_string_from_system().replace(".", "_")
 	var time = Time.get_time_string_from_system().replace(":", "")
-	var screenshot_path = "res://screenshot_%s_%s.png" % [date, time]
+	var screenshot_path = "user://screenshot_%s_%s.png" % [date, time]
 	# Wait for the next frame to render
 	await RenderingServer.frame_post_draw
 	# Grab the image, save it and free the SubViewport
@@ -50,6 +50,8 @@ func take_screenshoot() -> void:
 
 func _addImageToJSON(screenshot_path: String):
 	var json_file = FileAccess.open("res://scripts/listImagesAlbum.json", FileAccess.READ_WRITE)
+	if not json_file:
+		json_file = FileAccess.open("user://listImagesAlbum.json", FileAccess.READ_WRITE)
 	var arrayListmagesPath = JSON.parse_string(json_file.get_as_text())
 	arrayListmagesPath.append(screenshot_path)
 	json_file.store_string(JSON.stringify(arrayListmagesPath, "\t"))

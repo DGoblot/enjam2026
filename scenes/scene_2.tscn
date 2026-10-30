@@ -69,21 +69,22 @@ text = "Ce jour-là, c’était la première fois que je séchais les cours du s
 
 [node name="ZoomArea2" parent="." unique_id=1700831280 instance=ExtResource("3_ccscm")]
 layout_mode = 1
-offset_left = 355.0
-offset_top = 682.0
-offset_right = 355.0
-offset_bottom = 682.0
-scale = Vector2(0.41, 0.41)
+offset_left = 480.0
+offset_top = 723.0
+offset_right = 480.0
+offset_bottom = 723.0
+scale = Vector2(0.345, 0.345)
 text = "Encore aujourd’hui, j’adore écouter Xin jouer de la guitare. Depuis qu’on se connaît, on est inséparables. Je l’ai rencontrée durant un cours de solfège il y a un an et demi. Elle m’a défendue alors qu’un des garçons de la classe se moquait de mes taches de rousseur. On a pris l’habitude, ensuite, de se retrouver après les cours pour dessiner et faire de la musique ensemble. L’année dernière, on a décidé de customiser sa guitare avec plein de motifs en lien avec nos rêves : liberté, indépendance et voyages."
 
 [node name="ZoomArea3" parent="." unique_id=259370772 instance=ExtResource("3_ccscm")]
 layout_mode = 1
-offset_left = -74.0
-offset_top = 567.0
-offset_right = -74.0
-offset_bottom = 567.0
-scale = Vector2(0.41, 0.41)
+offset_left = -77.0
+offset_top = 598.0
+offset_right = -77.0
+offset_bottom = 598.0
+scale = Vector2(0.345, 0.345)
 text = "La première fois que j’ai vu Wei, je ne l’ai même pas calculée. Elle traînait énormément avec Xin et je me suis donc mis à la découvrir au fur et à mesure qu’on traînait ensemble. Elle est courageuse, persévérante et furieusement rebelle. Elle avait aussi des défauts, bien sûr : elle était grincheuse et pouvait être une vraie tête de mule. Mais c’est aussi ce qui faisait son charme. De plus, nous partagions une passion commune : le dessin. On s’était promis de postuler ensemble aux Beaux-Arts de Paris à nos 18 ans. Je lui avais tricoté et offert ce pull, qui illustre ce qu’elle représentait pour moi."
+metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1420460383]
 unique_name_in_owner = true

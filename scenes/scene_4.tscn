@@ -40,10 +40,26 @@ position = Vector2(960, 540)
 
 [node name="PlaceholderBG" type="AnimatedSprite2D" parent="." unique_id=713735965]
 unique_name_in_owner = true
-position = Vector2(961.41626, 490.99997)
-scale = Vector2(0.54480267, 0.50725806)
+position = Vector2(959.5, 490.99997)
+scale = Vector2(0.55330676, 0.50725806)
 sprite_frames = SubResource("SpriteFrames_w81ou")
 autoplay = "default"
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=130189216]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -913.0
+offset_right = 913.0
+offset_bottom = 245.0
+grow_horizontal = 2
+theme = ExtResource("6_7p87k")
+text = "Le jour du grand départ. Ma vie était sur le point de changer du tout au tout. Je pensais aux gens que je rencontrerais en France et à l’avenir que je construirais à l’université des Beaux-Arts. Je ressentais une forme d’excitation face aux paysages que j’allais découvrir… mais aussi une grande nostalgie face à ceux que je quittais. Une sensation bizarre me parcourait le corps en repensant à ma famille que je ne verrais plus beaucoup. J’avais peur pour les amis que je laissais de côté, peur qu’ils m’oublient à jamais. J’essayais de savoir avec qui je garderais contact malgré la distance. Je repassais en boucle les souvenirs que je m'étais déjà faits et les expériences nouvelles que j’allais vivre. Enfin, j’étais conscient que j’allais devenir garant de ma culture dans un pays où les codes et mœurs me feront ressentir un sentiment d’étrange inconnu.
+
+Au revoir, Shenzhen"
+horizontal_alignment = 1
 
 [node name="ButtonScreen" type="Button" parent="." unique_id=1199653726]
 unique_name_in_owner = true

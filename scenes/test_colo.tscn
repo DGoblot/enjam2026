@@ -41,8 +41,8 @@ position = Vector2(960, 540)
 
 [node name="PlaceholderBG" type="AnimatedSprite2D" parent="." unique_id=713735965]
 unique_name_in_owner = true
-position = Vector2(961.41626, 490.99997)
-scale = Vector2(0.54480267, 0.50725806)
+position = Vector2(959.4999, 490.99997)
+scale = Vector2(0.5504561, 0.50725806)
 sprite_frames = SubResource("SpriteFrames_w81ou")
 autoplay = "default"
 frame_progress = 0.22183084
@@ -70,23 +70,21 @@ metadata/_edit_lock_ = true
 
 [node name="ZoomArea2" parent="." unique_id=1700831280 instance=ExtResource("3_p6wxt")]
 layout_mode = 1
-offset_left = 91.0
-offset_top = 85.0
-offset_right = 91.0
-offset_bottom = 85.0
-scale = Vector2(0.475, 0.475)
+offset_left = 109.0
+offset_top = 147.0
+offset_right = 109.0
+offset_bottom = 147.0
+scale = Vector2(0.375, 0.375)
 text = "Maman a toujours été fière de nous, pour les petites comme les grandes réussites. Elle était toujours patiente et tolérante avec nous, malgré le fait qu’elle travaillait tard tous les jours. Ma grande sœur Jie de 9 ans avait gribouillé un dessin sur le dos de sa main. Elle l’avait dessiné avec passion en étant très impliquée dans sa réalisation. Ma mère l’arborait fièrement dans la rue comme un trophée. Le dessin représentais ma famille, les enfants sous la forme de fleurs, nos parents en plantes… et ma grand-mère en arbre."
-metadata/_edit_lock_ = true
 
 [node name="ZoomArea3" parent="." unique_id=1251794743 instance=ExtResource("3_p6wxt")]
 layout_mode = 1
-offset_left = 654.9999
-offset_top = 54.999878
-offset_right = 655.0
-offset_bottom = 54.999878
-scale = Vector2(0.525, 0.525)
+offset_left = 757.99994
+offset_top = -3.0000038
+offset_right = 758.0
+offset_bottom = -3.0
+scale = Vector2(0.345, 0.345)
 text = "Durant le festival de la mi-automne, énormément de lanternes sont suspendues dans les rues. Il y a énormément de motifs et de formes différentes dessinés sur ces lanternes. La nuit, elles brillent et illuminent la rue. Parfois même, leurs motifs se reflètent sur le sol et les murs de la rue. C’était pour moi un vrai spectacle devant lequel je m’émerveillais. Il y avait aussi des lanternes de plein de formes ; certaines, en forme de poissons, me paraissaient comme des poissons magiques qui flottaient dans la rue."
-metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1911980687]
 unique_name_in_owner = true

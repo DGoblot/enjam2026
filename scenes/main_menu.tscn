@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://d1ji6gq114ur4" path="res://assets/chien.png" id="10_5pajh"]
 [ext_resource type="FontFile" uid="uid://ccqf2d5xvwqpa" path="res://windows-xp-title-window.otf" id="11_j7ex8"]
 [ext_resource type="PackedScene" uid="uid://ney70c18vt3k" path="res://scenes/scene_4.tscn" id="14_7b55j"]
+[ext_resource type="PackedScene" uid="uid://blmcdh1bop4ie" path="res://scenes/scene_3.tscn" id="15_j7ex8"]
+[ext_resource type="AudioStream" uid="uid://dc3w7sf35prg4" path="res://assets/Music/Intro.MP3" id="18_a8gd2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w81ou"]
 bg_color = Color(0, 0, 0, 1)
@@ -174,7 +176,12 @@ visible = false
 layout_mode = 1
 next = 2
 
-[node name="Scene3" parent="Scenes" unique_id=262723424 instance=ExtResource("14_7b55j")]
+[node name="Scene3" parent="Scenes" unique_id=434586115 instance=ExtResource("15_j7ex8")]
+visible = false
+layout_mode = 1
+next = 3
+
+[node name="Scene4" parent="Scenes" unique_id=262723424 instance=ExtResource("14_7b55j")]
 visible = false
 layout_mode = 1
 next = 4
@@ -186,24 +193,29 @@ layout_mode = 1
 
 [node name="ButtonIntro" type="Button" parent="." unique_id=1188699711]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_oa1go")
+theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_w81ou")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1ajci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rcqid")
-text = "Alors en fait c'est l'histoire de quelqu'un qui fait quelque chose"
+text = "À 35 ans, en tant qu’artiste, je suis passionné par ce que je fais. Mais dans la vie, je dois vraiment faire face à tellement de choses ! Le travail, la vie quotidienne, la famille… Cette vie m’épuise. 
+Mes parents me manquent, Shenzhen me manque, mon pays me manque. J’aimerais retrouver l’époque où je n’avais pas encore à affronter tout ça. 
+Parfois, j’ai l’impression d’être sur le point d’oublier mes moments les plus heureux et les plus précieux : mes souvenirs d’enfance, cette enfance que je ne reverrai jamais.
+Au fond de moi, je le sais, ces beaux souvenirs ne seront jamais effacés…"
 autowrap_mode = 2
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1686973671]
-unique_name_in_owner = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1979285525]
 position = Vector2(960, 540)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=836964203]
+unique_name_in_owner = true
+stream = ExtResource("18_a8gd2")
 
 [connection signal="visibility_changed" from="Scenes/Album" to="." method="_on_album_visibility_changed"]
